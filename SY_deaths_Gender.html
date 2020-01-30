@@ -9,33 +9,7 @@
 
 <body>
   <script>
-    // Feel free to change or delete any of the code you see in this editor!
-    var n = 10, // number of samples
-    m = 5; // number of series
-		var max =0;
-   
-    d3.csv("https://raw.githubusercontent.com/IMrabet/Data_Visualisation/master/VDC_Syria_CASREP.csv",function(error, data){       
-    console.log(data);  
-    var provinceNest = d3.nest()
-   	.key(function(d){
-      				return d.province;
-    			})
-    	.rollup(function(d){
-      					var ageNest = d3.nest()
-               .key(function(b){
-                 		return b.gender;
-               		})
-               .rollup(function(k){
-                 			return k.length;
-               			})
-               .entries(d);             
-      					return ageNest;
-    					})
-    	.entries(data);
-		
-    console.log(provinceNest);
-    
-    var margin = {top: 20, right: 10, bottom: 20, left: 10};
+  var margin = {top: 20, right: 10, bottom: 20, left: 10};
 
 		var width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -45,18 +19,55 @@
 			.attr("width",width + margin.left + margin.right)
     	.attr("height",height + margin.top + margin.bottom)
      .append("g")
-     .attr("transform","translate("+margin.left+","+margin.top+")")
-    console.log(d3.map(provinceNest,function(d){
-										return d;
-									})
-				)
+     .attr("transform","translate("+margin.left+","+margin.top+")");
+    // Feel free to change or delete any of the code you see in this editor!
+    d3.csv("https://raw.githubusercontent.com/IMrabet/Data_Visualisation/master/VDC_Syria_CASREP.csv",function(error, data){       
+    //console.log(data);  
+    var provinceNest = d3.nest()
+   	.key(function(d){
+      				return d.province+"-"+d.gender;
+    			})
+				.rollup(function(k){
+                 			return k.length;
+               			})
+ /*   	.rollup(function(d){
+      					var ageNest = d3.nest()
+               .key(function(b){
+                 		return b.gender;
+               		})
+               .rollup(function(k){
+                 			return k.length;
+               			})
+               .entries(d);             
+      					return ageNest;
+    					})*/
+    	.entries(data);
+		
+    //console.log(provinceNest);
+    
+    
+	 var listprovinces = [];
+	 var max = 0;
+	 var listgender = [];
+	 provinceNest.forEach(function(k){
+							listprovinces.push(k.key.split("-",1)[0]);
+							listgender.push(k.key.substring(k.key.search("-")+1,k.keylength));
+							if(max < k.value){
+								max = k.value;
+							}	 
+							})
+	
+    //console.log(listprovinces);
+	listprovinces = Array.from(new Set(listprovinces));
+	listgender = Array.from(new Set(listgender));
+	console.log(max);
     var x = d3.scaleBand()
-    .domain(d3.map(provinceNest).keys())
+    .domain(listprovinces)
     .range([0, width])
     .paddingInner(.3)
     
     var x2=d3.scaleBand()
-    .domain(d3.range(n))//de m à m-1
+    .domain(listgender)
     .range([0, x.bandwidth()])
     
     var y = d3.scaleLinear()
@@ -64,26 +75,15 @@
     .range([0,height])
     
    
-    svg.selectAll("g").data(data)
-    .enter()
-    .append("g")
-//     .style("stroke","black")
-//     .style("fill","white")
-//     .attr("x", function(d,i){return x(i);})
-//     .attr("y", function(d,i){return height - y(d3.max(d));})
-//     .attr("width", function(d,i){return x.bandwidth();})
-//     .attr("height", function(d,i){return y(d3.max(d));})
-    .attr("transform",function(d,i){return "translate(" + x(i) + ",0)"})
-    .selectAll("rect")
-    .data(function(d){return d;})
+    svg.selectAll("rect").data(provinceNest)
     .enter()
     .append("rect")
     .style("stroke","black")
     .style("fill","white")
-    .attr("x", function(d,i){return x2(i);})
-    .attr("y", function(d,i){return height - y(d);})
+    .attr("x", function(k,i){return x(k.key.split("-",1)[0])+x2(k.key.substring(k.key.search("-")+1,k.key.length));})
+    .attr("y", function(d,i){return height - y(d.value);})
     .attr("width", function(d,i){return x2.bandwidth();})
-    .attr("height", function(d,i){return y(d);})
+    .attr("height", function(d,i){return y(d.value);})
 
      });
   </script>
