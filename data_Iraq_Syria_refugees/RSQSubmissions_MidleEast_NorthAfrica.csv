@@ -1,0 +1,392 @@
+Extracted:,United Nations High Commissioner for Refugees
+Date extracted:,07/02/2020 16:29:59
+Last updated:,07/02/2020 16:29:59
+
+Data table contains the following:,UNHCR resettlement departures
+Years selected:,"2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019"
+2019 data (if included) as of:, December 2019
+Country of origin:,"IRQ,SYR"
+Country of asylum:,"ALB,ARM,AZE,BLR,BIH,HRV,CYP,CZE,GEO,HUN,MLT,MKD,MDA,ROU,RUS,SRB,TUR,UKR"
+Resettlement country:,"ALB,ARG,AUS,AUT,BLR,BEL,BRA,BGR,CAN,CHL,HRV,CYP,CZE,DNK,EST,FIN,FRA,DEU,HUN,ISL,IRL,ITA,JPN,LVA,LIE,LTU,LUX,MLT,MEX,MCO,NLD,NZL,NOR,PRY,POL,PRT,KOR,ROU,SVK,SVN,ESP,SWE,CHE,GBR,USA,URY"
+
+Year,Country of Origin (ISO),Country of Origin,Country of Asylum,Country of Asylum (ISO),Country of Resettlement (ISO),Country of Resettlement,Total submissions (persons)
+2003,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",83
+2003,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",31
+2003,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",65
+2003,SYR,"Syrian Arab Rep.",UKR,"Ukraine",SWE,"Sweden",1
+2003,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",5
+2003,IRQ,"Iraq",ROU,"Romania",CHE,"Switzerland",1
+2003,IRQ,"Iraq",TUR,"Turkey",DNK,"Denmark",3
+2003,IRQ,"Iraq",TUR,"Turkey",CHE,"Switzerland",3
+2003,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",15
+2003,IRQ,"Iraq",TUR,"Turkey",NLD,"Netherlands",1
+2003,IRQ,"Iraq",AZE,"Azerbaijan",CAN,"Canada",5
+2003,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",30
+2003,IRQ,"Iraq",AZE,"Azerbaijan",NZL,"New Zealand",17
+2003,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",100
+2003,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",31
+2003,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",5
+2003,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",6
+2003,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",7
+2003,IRQ,"Iraq",AZE,"Azerbaijan",SWE,"Sweden",4
+2004,SYR,"Syrian Arab Rep.",UKR,"Ukraine",USA,"United States of America",1
+2004,SYR,"Syrian Arab Rep.",UKR,"Ukraine",CAN,"Canada",8
+2004,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",30
+2004,IRQ,"Iraq",AZE,"Azerbaijan",SWE,"Sweden",2
+2004,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",61
+2004,IRQ,"Iraq",RUS,"Russian Federation",DNK,"Denmark",5
+2004,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",5
+2004,SYR,"Syrian Arab Rep.",UKR,"Ukraine",NOR,"Norway",1
+2004,IRQ,"Iraq",RUS,"Russian Federation",NLD,"Netherlands",8
+2004,IRQ,"Iraq",UKR,"Ukraine",SWE,"Sweden",5
+2004,IRQ,"Iraq",UKR,"Ukraine",NLD,"Netherlands",4
+2004,IRQ,"Iraq",AZE,"Azerbaijan",NZL,"New Zealand",5
+2004,SYR,"Syrian Arab Rep.",UKR,"Ukraine",NLD,"Netherlands",1
+2004,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",36
+2004,IRQ,"Iraq",RUS,"Russian Federation",FIN,"Finland",5
+2004,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",13
+2004,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",12
+2004,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",3
+2004,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",2
+2004,IRQ,"Iraq",UKR,"Ukraine",FIN,"Finland",1
+2004,IRQ,"Iraq",UKR,"Ukraine",CAN,"Canada",4
+2005,IRQ,"Iraq",HUN,"Hungary",FIN,"Finland",1
+2005,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",29
+2005,IRQ,"Iraq",ARM,"Armenia",CAN,"Canada",2
+2005,IRQ,"Iraq",TUR,"Turkey",POL,"Poland",1
+2005,IRQ,"Iraq",AZE,"Azerbaijan",CAN,"Canada",15
+2005,IRQ,"Iraq",ALB,"Albania",AUS,"Australia",3
+2005,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",3
+2005,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",11
+2005,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",11
+2005,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",3
+2005,SYR,"Syrian Arab Rep.",CYP,"Cyprus",SWE,"Sweden",3
+2005,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",1
+2005,IRQ,"Iraq",TUR,"Turkey",NLD,"Netherlands",17
+2005,SYR,"Syrian Arab Rep.",UKR,"Ukraine",SWE,"Sweden",8
+2005,IRQ,"Iraq",UKR,"Ukraine",NLD,"Netherlands",1
+2006,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",15
+2006,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",8
+2006,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1
+2006,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",5
+2006,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",34
+2006,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",6
+2006,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",21
+2006,IRQ,"Iraq",AZE,"Azerbaijan",NOR,"Norway",4
+2006,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",2
+2006,IRQ,"Iraq",RUS,"Russian Federation",NZL,"New Zealand",2
+2006,IRQ,"Iraq",UKR,"Ukraine",CAN,"Canada",3
+2006,IRQ,"Iraq",UKR,"Ukraine",SWE,"Sweden",4
+2007,IRQ,"Iraq",CYP,"Cyprus",SWE,"Sweden",3
+2007,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",35
+2007,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",3
+2007,SYR,"Syrian Arab Rep.",UKR,"Ukraine",CAN,"Canada",8
+2007,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",49
+2007,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",1
+2007,IRQ,"Iraq",GEO,"Georgia",DNK,"Denmark",1
+2007,IRQ,"Iraq",MLT,"Malta",USA,"United States of America",3
+2007,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",198
+2007,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",13
+2007,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",NOR,"Norway",8
+2007,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",USA,"United States of America",3
+2007,SYR,"Syrian Arab Rep.",UKR,"Ukraine",NOR,"Norway",8
+2007,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",USA,"United States of America",1
+2007,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",CAN,"Canada",19
+2007,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",3100
+2007,IRQ,"Iraq",TUR,"Turkey",NLD,"Netherlands",4
+2008,IRQ,"Iraq",RUS,"Russian Federation",NLD,"Netherlands",1
+2008,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",84
+2008,IRQ,"Iraq",AZE,"Azerbaijan",USA,"United States of America",19
+2008,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",2
+2008,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",CAN,"Canada",9
+2008,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",7
+2008,IRQ,"Iraq",UKR,"Ukraine",SWE,"Sweden",2
+2008,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",8
+2008,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",138
+2008,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",USA,"United States of America",19
+2008,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",4336
+2008,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",FRA,"France",4
+2008,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1
+2008,IRQ,"Iraq",TUR,"Turkey",FRA,"France",40
+2008,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",16
+2008,IRQ,"Iraq",UKR,"Ukraine",DNK,"Denmark",1
+2008,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",767
+2008,IRQ,"Iraq",AZE,"Azerbaijan",NZL,"New Zealand",1
+2008,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",8
+2008,IRQ,"Iraq",RUS,"Russian Federation",NOR,"Norway",1
+2009,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",NLD,"Netherlands",7
+2009,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",14
+2009,IRQ,"Iraq",UKR,"Ukraine",NLD,"Netherlands",1
+2009,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",3
+2009,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",16
+2009,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",CAN,"Canada",1
+2009,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",5
+2009,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",14
+2009,IRQ,"Iraq",TUR,"Turkey",CHE,"Switzerland",5
+2009,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",4838
+2009,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1
+2009,IRQ,"Iraq",RUS,"Russian Federation",FRA,"France",2
+2009,IRQ,"Iraq",UKR,"Ukraine",SWE,"Sweden",9
+2009,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",10
+2009,IRQ,"Iraq",AZE,"Azerbaijan",USA,"United States of America",27
+2009,IRQ,"Iraq",TUR,"Turkey",FRA,"France",16
+2009,SYR,"Syrian Arab Rep.",UKR,"Ukraine",SWE,"Sweden",1
+2009,SYR,"Syrian Arab Rep.",UKR,"Ukraine",USA,"United States of America",12
+2009,SYR,"Syrian Arab Rep.",MDA,"Rep. of Moldova",USA,"United States of America",1
+2009,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",399
+2010,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",12
+2010,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",3018
+2010,IRQ,"Iraq",RUS,"Russian Federation",NOR,"Norway",1
+2010,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1
+2010,IRQ,"Iraq",RUS,"Russian Federation",FIN,"Finland",1
+2010,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",NOR,"Norway",4
+2010,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",5
+2010,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",2
+2010,IRQ,"Iraq",UKR,"Ukraine",PRT,"Portugal",1
+2010,IRQ,"Iraq",TUR,"Turkey",NLD,"Netherlands",6
+2010,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",3
+2010,IRQ,"Iraq",TUR,"Turkey",CHE,"Switzerland",1
+2010,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",276
+2010,IRQ,"Iraq",TUR,"Turkey",DNK,"Denmark",2
+2010,IRQ,"Iraq",UKR,"Ukraine",FRA,"France",2
+2010,IRQ,"Iraq",RUS,"Russian Federation",SWE,"Sweden",1
+2010,IRQ,"Iraq",MLT,"Malta",USA,"United States of America",3
+2010,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",502
+2010,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",SWE,"Sweden",4
+2010,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",2
+2011,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",SWE,"Sweden",3
+2011,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",1
+2011,IRQ,"Iraq",UKR,"Ukraine",SWE,"Sweden",1
+2011,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",8
+2011,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",1
+2011,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",USA,"United States of America",3
+2011,SYR,"Syrian Arab Rep.",TUR,"Turkey",NOR,"Norway",1
+2011,IRQ,"Iraq",TUR,"Turkey",NLD,"Netherlands",2
+2011,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",3280
+2011,IRQ,"Iraq",UKR,"Ukraine",NLD,"Netherlands",1
+2011,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",6
+2011,IRQ,"Iraq",AZE,"Azerbaijan",CAN,"Canada",14
+2011,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",6
+2011,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",DNK,"Denmark",6
+2011,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",3
+2011,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",128
+2011,SYR,"Syrian Arab Rep.",MDA,"Rep. of Moldova",FRA,"France",1
+2011,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",5
+2011,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",226
+2012,IRQ,"Iraq",TUR,"Turkey",FRA,"France",1
+2012,IRQ,"Iraq",AZE,"Azerbaijan",CAN,"Canada",6
+2012,IRQ,"Iraq",UKR,"Ukraine",USA,"United States of America",3
+2012,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",866
+2012,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",5
+2012,IRQ,"Iraq",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",FIN,"Finland",3
+2012,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",177
+2012,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",26
+2012,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",1
+2012,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",122
+2012,IRQ,"Iraq",RUS,"Russian Federation",NOR,"Norway",1
+2012,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",3
+2012,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",3327
+2012,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2012,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1
+2013,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",2
+2013,IRQ,"Iraq",TUR,"Turkey",ROU,"Romania",82
+2013,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",726
+2013,SYR,"Syrian Arab Rep.",AZE,"Azerbaijan",USA,"United States of America",5
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",2
+2013,SYR,"Syrian Arab Rep.",MLT,"Malta",USA,"United States of America",4
+2013,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",5220
+2013,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",1
+2013,IRQ,"Iraq",TUR,"Turkey",PRT,"Portugal",6
+2013,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",18
+2013,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",2
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",20
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",27
+2013,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",839
+2013,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",251
+2013,IRQ,"Iraq",RUS,"Russian Federation",NOR,"Norway",1
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",7
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",1
+2013,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",2
+2014,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",843
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",LIE,"Liechtenstein",20
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",55
+2014,IRQ,"Iraq",RUS,"Russian Federation",FRA,"France",1
+2014,IRQ,"Iraq",TUR,"Turkey",MEX,"Mexico",1
+2014,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",2
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",FRA,"France",9
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",53
+2014,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",854
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUT,"Austria",48
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",86
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",LUX,"Luxembourg",59
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",ISL,"Iceland",14
+2014,IRQ,"Iraq",RUS,"Russian Federation",USA,"United States of America",3
+2014,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",2
+2014,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",5144
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",BEL,"Belgium",91
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",220
+2014,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",2
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",7
+2014,IRQ,"Iraq",BIH,"Bosnia and Herzegovina",CAN,"Canada",1
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",4267
+2014,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",4
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",NOR,"Norway",512
+2014,SYR,"Syrian Arab Rep.",BIH,"Bosnia and Herzegovina",CAN,"Canada",15
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",14
+2014,SYR,"Syrian Arab Rep.",TUR,"Turkey",DNK,"Denmark",2
+2014,IRQ,"Iraq",RUS,"Russian Federation",CAN,"Canada",2
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",7169
+2015,SYR,"Syrian Arab Rep.",UKR,"Ukraine",DNK,"Denmark",1
+2015,SYR,"Syrian Arab Rep.",UKR,"Ukraine",USA,"United States of America",7
+2015,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",960
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",5
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",404
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",HUN,"Hungary",1
+2015,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",3
+2015,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",273
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",203
+2015,IRQ,"Iraq",RUS,"Russian Federation",SWE,"Sweden",1
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",9
+2015,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",USA,"United States of America",5
+2015,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",SWE,"Sweden",2
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",NOR,"Norway",234
+2015,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",5374
+2015,IRQ,"Iraq",TUR,"Turkey",NZL,"New Zealand",1
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",57
+2015,SYR,"Syrian Arab Rep.",TUR,"Turkey",DNK,"Denmark",9
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",NZL,"New Zealand",1
+2016,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",SWE,"Sweden",8
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",BGR,"Bulgaria",41
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",441
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",ROU,"Romania",15
+2016,IRQ,"Iraq",RUS,"Russian Federation",DNK,"Denmark",1
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",LTU,"Lithuania",85
+2016,SYR,"Syrian Arab Rep.",MLT,"Malta",USA,"United States of America",16
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",MLT,"Malta",6
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",CZE,"Czechia",100
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",EST,"Estonia",66
+2016,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",USA,"United States of America",6
+2016,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",FRA,"France",1
+2016,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",140
+2016,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",8596
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",FRA,"France",1690
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",ESP,"Spain",299
+2016,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",125
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",HUN,"Hungary",4
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUT,"Austria",6
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",4975
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",1768
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",PRT,"Portugal",46
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",1068
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",LUX,"Luxembourg",164
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",FIN,"Finland",715
+2016,IRQ,"Iraq",TUR,"Turkey",ITA,"Italy",1
+2016,IRQ,"Iraq",TUR,"Turkey",CHE,"Switzerland",5
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",ITA,"Italy",544
+2016,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",488
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",BEL,"Belgium",271
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",199
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",LVA,"Latvia",53
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",2146
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",1034
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",NOR,"Norway",910
+2016,SYR,"Syrian Arab Rep.",TUR,"Turkey",HRV,"Croatia",35
+2017,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",2666
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",2
+2017,SYR,"Syrian Arab Rep.",UKR,"Ukraine",NOR,"Norway",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",HRV,"Croatia",157
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",3433
+2017,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",NLD,"Netherlands",5
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",CYP,"Cyprus",6
+2017,IRQ,"Iraq",TUR,"Turkey",NOR,"Norway",1
+2017,SYR,"Syrian Arab Rep.",UKR,"Ukraine",SWE,"Sweden",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",ROU,"Romania",48
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",NOR,"Norway",818
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",LTU,"Lithuania",191
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",MLT,"Malta",11
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",440
+2017,SYR,"Syrian Arab Rep.",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",NOR,"Norway",2
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",EST,"Estonia",143
+2017,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",SWE,"Sweden",8
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",FRA,"France",2351
+2017,IRQ,"Iraq",GEO,"Georgia",SWE,"Sweden",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",ESP,"Spain",399
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUT,"Austria",245
+2017,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",183
+2017,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",1437
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",PRT,"Portugal",205
+2017,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",100
+2017,IRQ,"Iraq",ARM,"Armenia",SWE,"Sweden",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",244
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",90
+2017,IRQ,"Iraq",TUR,"Turkey",LUX,"Luxembourg",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",593
+2017,IRQ,"Iraq",TUR,"Turkey",FIN,"Finland",1
+2017,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",USA,"United States of America",33
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",LUX,"Luxembourg",149
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",FIN,"Finland",650
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",ITA,"Italy",102
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",BEL,"Belgium",706
+2017,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",FIN,"Finland",6
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",SVN,"Slovenia",67
+2017,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",1
+2017,SYR,"Syrian Arab Rep.",TUR,"Turkey",LVA,"Latvia",65
+2017,SYR,"Syrian Arab Rep.",ARM,"Armenia",FIN,"Finland",1
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",LVA,"Latvia",4
+2018,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",USA,"United States of America",2
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",FIN,"Finland",622
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",1
+2018,SYR,"Syrian Arab Rep.",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",FIN,"Finland",5
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",HRV,"Croatia",330
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",3928
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",1702
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",BGR,"Bulgaria",66
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",LTU,"Lithuania",13
+2018,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",NOR,"Norway",2
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",EST,"Estonia",88
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",FRA,"France",1418
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",ESP,"Spain",263
+2018,IRQ,"Iraq",TUR,"Turkey",PRT,"Portugal",108
+2018,IRQ,"Iraq",TUR,"Turkey",SWE,"Sweden",2
+2018,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",489
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",PRT,"Portugal",99
+2018,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",110
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",640
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",966
+2018,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",945
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",401
+2018,SYR,"Syrian Arab Rep.",SRB,"Serbia and Kosovo: S/RES/1244 (1999)",SWE,"Sweden",1
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",ITA,"Italy",118
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",BEL,"Belgium",692
+2018,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",24
+2018,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",SWE,"Sweden",9
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",ITA,"Italy",31
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",BEL,"Belgium",473
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",CAN,"Canada",1926
+2019,IRQ,"Iraq",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",57
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",SWE,"Sweden",699
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",NZL,"New Zealand",11
+2019,IRQ,"Iraq",TUR,"Turkey",USA,"United States of America",57
+2019,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",SWE,"Sweden",1
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",AUS,"Australia",8
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",USA,"United States of America",6
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",FIN,"Finland",549
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",HRV,"Croatia",41
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",DEU,"Germany",4881
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",NLD,"Netherlands",811
+2019,IRQ,"Iraq",TUR,"Turkey",AUS,"Australia",339
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",BGR,"Bulgaria",168
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",ROU,"Romania",77
+2019,SYR,"Syrian Arab Rep.",RUS,"Russian Federation",FIN,"Finland",3
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",EST,"Estonia",5
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",FRA,"France",821
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",ESP,"Spain",518
+2019,IRQ,"Iraq",TUR,"Turkey",ESP,"Spain",1
+2019,IRQ,"Iraq",TUR,"Turkey",PRT,"Portugal",265
+2019,IRQ,"Iraq",TUR,"Turkey",DEU,"Germany",3
+2019,IRQ,"Iraq",TUR,"Turkey",CAN,"Canada",144
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",PRT,"Portugal",423
+2019,SYR,"Syrian Arab Rep.",TUR,"Turkey",GBR,"United Kingdom of Great Britain and Northern Ireland",253
+
+"Some data presented may differ from statistics published previously due to retroactive changes or the inclusion of previously unavailable data. In addition, resettlement departure figures reported by UNHCR may not match resettlement statistics published by States as Government figures may include individuals who were resettled outside of UNHCR processes. More information about UNHCR's resettlement programe can be found at http://www.unhcr.org/resettlement.html."

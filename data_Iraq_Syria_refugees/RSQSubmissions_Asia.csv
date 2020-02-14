@@ -1,0 +1,896 @@
+Extracted:,United Nations High Commissioner for Refugees
+Date extracted:,14/02/2020 12:47:07
+Last updated:,14/02/2020 12:47:07
+
+Data table contains the following:,UNHCR resettlement departures
+Years selected:,"2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019"
+2019 data (if included) as of:, December 2019
+Country of origin:,"IRQ,SYR"
+Country of asylum:,"AFG,BGD,KHM,CHN,HKG,MAC,FJI,IND,IDN,IRN,KAZ,KGZ,MYS,FSM,MNG,MMR,NRU,NPL,PAK,PLW,PNG,PHL,WSM,SGP,SLB,LKA,TJK,THA,TLS,TKM,UZB,VUT,VNM"
+Resettlement country:,"ALB,ARG,AUS,AUT,BLR,BEL,BRA,BGR,CAN,CHL,HRV,CYP,CZE,DNK,EST,FIN,FRA,DEU,HUN,ISL,IRL,ITA,JPN,LVA,LIE,LTU,LUX,MLT,MEX,MCO,NLD,NZL,NOR,PRY,POL,PRT,KOR,ROU,SVK,SVN,ESP,SWE,CHE,GBR,USA,URY"
+
+Year,Country of Origin (ISO),Country of Origin,Country of Asylum,Country of Asylum (ISO),Country of Resettlement (ISO),Country of Resettlement,Total submissions (persons)
+2003,IRQ,"Iraq",THA,"Thailand",NOR,"Norway",4
+2003,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",4
+2003,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",10
+2003,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",4
+2003,IRQ,"Iraq",All others,"All others",BRA,"Brazil",6
+2003,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",34
+2003,IRQ,"Iraq",MYS,"Malaysia",DNK,"Denmark",1
+2003,IRQ,"Iraq",All others,"All others",NOR,"Norway",27
+2003,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",7
+2003,IRQ,"Iraq",NPL,"Nepal",NZL,"New Zealand",1
+2003,IRQ,"Iraq",All others,"All others",CAN,"Canada",271
+2003,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",GBR,"United Kingdom of Great Britain and Northern Ireland",2
+2003,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",49
+2003,IRQ,"Iraq",THA,"Thailand",NZL,"New Zealand",17
+2003,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",11
+2003,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",5
+2003,IRQ,"Iraq",THA,"Thailand",DNK,"Denmark",2
+2003,IRQ,"Iraq",All others,"All others",SWE,"Sweden",122
+2003,SYR,"Syrian Arab Rep.",IDN,"Indonesia",NZL,"New Zealand",1
+2003,IRQ,"Iraq",IDN,"Indonesia",GBR,"United Kingdom of Great Britain and Northern Ireland",4
+2003,IRQ,"Iraq",All others,"All others",DEU,"Germany",68
+2003,IRQ,"Iraq",PAK,"Pakistan",CAN,"Canada",1
+2003,IRQ,"Iraq",All others,"All others",USA,"United States of America",54
+2003,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",1
+2003,IRQ,"Iraq",LKA,"Sri Lanka",CAN,"Canada",1
+2003,IRQ,"Iraq",IDN,"Indonesia",SWE,"Sweden",10
+2003,IRQ,"Iraq",UZB,"Uzbekistan",CAN,"Canada",8
+2003,IRQ,"Iraq",All others,"All others",DNK,"Denmark",14
+2003,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",1
+2003,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",5
+2003,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",41
+2003,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",42
+2003,IRQ,"Iraq",NRU,"Nauru",AUS,"Australia",1
+2003,IRQ,"Iraq",All others,"All others",FIN,"Finland",42
+2003,IRQ,"Iraq",MYS,"Malaysia",GBR,"United Kingdom of Great Britain and Northern Ireland",6
+2003,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",11
+2003,SYR,"Syrian Arab Rep.",IDN,"Indonesia",SWE,"Sweden",1
+2003,IRQ,"Iraq",LKA,"Sri Lanka",DEU,"Germany",5
+2003,IRQ,"Iraq",MYS,"Malaysia",SWE,"Sweden",4
+2003,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CHE,"Switzerland",1
+2003,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",7
+2003,IRQ,"Iraq",All others,"All others",FRA,"France",1
+2003,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",30
+2003,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",1
+2003,SYR,"Syrian Arab Rep.",IDN,"Indonesia",USA,"United States of America",1
+2003,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",55
+2003,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1
+2003,IRQ,"Iraq",LKA,"Sri Lanka",NOR,"Norway",9
+2003,IRQ,"Iraq",All others,"All others",IRL,"Ireland",7
+2003,IRQ,"Iraq",LKA,"Sri Lanka",SWE,"Sweden",2
+2003,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",8
+2003,IRQ,"Iraq",All others,"All others",ITA,"Italy",21
+2003,IRQ,"Iraq",PAK,"Pakistan",SWE,"Sweden",3
+2003,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",3
+2003,IRQ,"Iraq",All others,"All others",AUS,"Australia",121
+2003,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",6
+2003,IRQ,"Iraq",THA,"Thailand",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2003,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",15
+2003,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",21
+2004,IRQ,"Iraq",All others,"All others",SWE,"Sweden",133
+2004,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",2
+2004,IRQ,"Iraq",THA,"Thailand",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2004,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",1
+2004,IRQ,"Iraq",All others,"All others",AUS,"Australia",94
+2004,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",14
+2004,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",7
+2004,IRQ,"Iraq",All others,"All others",USA,"United States of America",2
+2004,IRQ,"Iraq",MYS,"Malaysia",GBR,"United Kingdom of Great Britain and Northern Ireland",5
+2004,IRQ,"Iraq",KHM,"Cambodia",CAN,"Canada",5
+2004,IRQ,"Iraq",All others,"All others",BRA,"Brazil",170
+2004,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",4
+2004,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",GBR,"United Kingdom of Great Britain and Northern Ireland",6
+2004,IRQ,"Iraq",PNG,"Papua New Guinea",AUS,"Australia",1
+2004,IRQ,"Iraq",All others,"All others",CAN,"Canada",130
+2004,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",15
+2004,IRQ,"Iraq",All others,"All others",DEU,"Germany",30
+2004,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",12
+2004,IRQ,"Iraq",PAK,"Pakistan",CAN,"Canada",4
+2004,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",6
+2004,IRQ,"Iraq",LKA,"Sri Lanka",CAN,"Canada",5
+2004,IRQ,"Iraq",All others,"All others",DNK,"Denmark",7
+2004,IRQ,"Iraq",THA,"Thailand",SWE,"Sweden",11
+2004,IRQ,"Iraq",IND,"India",CAN,"Canada",9
+2004,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",42
+2004,IRQ,"Iraq",All others,"All others",FIN,"Finland",26
+2004,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",9
+2004,IRQ,"Iraq",NRU,"Nauru",AUS,"Australia",11
+2004,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1
+2004,IRQ,"Iraq",PAK,"Pakistan",FIN,"Finland",7
+2004,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",3
+2004,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",39
+2004,IRQ,"Iraq",PAK,"Pakistan",NLD,"Netherlands",7
+2004,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",26
+2004,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",1
+2004,IRQ,"Iraq",All others,"All others",NOR,"Norway",16
+2004,SYR,"Syrian Arab Rep.",IDN,"Indonesia",CAN,"Canada",1
+2004,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",9
+2005,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",7
+2005,SYR,"Syrian Arab Rep.",THA,"Thailand",SWE,"Sweden",1
+2005,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",33
+2005,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",11
+2005,IRQ,"Iraq",All others,"All others",POL,"Poland",1
+2005,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",3
+2005,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",7
+2005,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",2
+2005,IRQ,"Iraq",All others,"All others",SWE,"Sweden",165
+2005,IRQ,"Iraq",MYS,"Malaysia",GBR,"United Kingdom of Great Britain and Northern Ireland",3
+2005,IRQ,"Iraq",LKA,"Sri Lanka",AUS,"Australia",4
+2005,IRQ,"Iraq",All others,"All others",USA,"United States of America",223
+2005,IRQ,"Iraq",All others,"All others",AUS,"Australia",304
+2005,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",15
+2005,SYR,"Syrian Arab Rep.",PAK,"Pakistan",NLD,"Netherlands",8
+2005,IRQ,"Iraq",All others,"All others",CAN,"Canada",143
+2005,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",8
+2005,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",4
+2005,IRQ,"Iraq",All others,"All others",DNK,"Denmark",8
+2005,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",15
+2005,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",NLD,"Netherlands",5
+2005,IRQ,"Iraq",All others,"All others",FIN,"Finland",7
+2005,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",2
+2005,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",35
+2005,SYR,"Syrian Arab Rep.",PAK,"Pakistan",SWE,"Sweden",8
+2005,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",9
+2005,IRQ,"Iraq",CHN,"China",NLD,"Netherlands",2
+2005,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",32
+2005,IRQ,"Iraq",LKA,"Sri Lanka",USA,"United States of America",4
+2005,IRQ,"Iraq",All others,"All others",NOR,"Norway",7
+2006,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2006,IRQ,"Iraq",IND,"India",SWE,"Sweden",1
+2006,IRQ,"Iraq",All others,"All others",FIN,"Finland",1
+2006,IRQ,"Iraq",PAK,"Pakistan",AUS,"Australia",7
+2006,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",3
+2006,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",2
+2006,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",144
+2006,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",11
+2006,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",74
+2006,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",4
+2006,IRQ,"Iraq",NPL,"Nepal",USA,"United States of America",7
+2006,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",30
+2006,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",1
+2006,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",6
+2006,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2006,IRQ,"Iraq",All others,"All others",NOR,"Norway",13
+2006,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",3
+2006,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",5
+2006,IRQ,"Iraq",All others,"All others",SWE,"Sweden",111
+2006,IRQ,"Iraq",CHN,"China",FIN,"Finland",2
+2006,IRQ,"Iraq",THA,"Thailand",SWE,"Sweden",1
+2006,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",1
+2006,IRQ,"Iraq",All others,"All others",USA,"United States of America",171
+2006,IRQ,"Iraq",KAZ,"Kazakhstan",USA,"United States of America",4
+2006,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",2
+2006,IRQ,"Iraq",NRU,"Nauru",IRL,"Ireland",2
+2006,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",5
+2006,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",1
+2006,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",29
+2006,IRQ,"Iraq",All others,"All others",AUS,"Australia",245
+2006,IRQ,"Iraq",KGZ,"Kyrgyzstan",NLD,"Netherlands",4
+2006,IRQ,"Iraq",NRU,"Nauru",NLD,"Netherlands",2
+2006,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",1
+2006,IRQ,"Iraq",All others,"All others",CAN,"Canada",59
+2006,IRQ,"Iraq",KGZ,"Kyrgyzstan",NOR,"Norway",4
+2006,IRQ,"Iraq",NRU,"Nauru",NZL,"New Zealand",2
+2006,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",1
+2006,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",2
+2006,IRQ,"Iraq",All others,"All others",DNK,"Denmark",4
+2006,IRQ,"Iraq",KGZ,"Kyrgyzstan",NZL,"New Zealand",4
+2006,IRQ,"Iraq",NRU,"Nauru",SWE,"Sweden",1
+2007,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",275
+2007,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",19
+2007,IRQ,"Iraq",IDN,"Indonesia",DNK,"Denmark",5
+2007,IRQ,"Iraq",All others,"All others",IRL,"Ireland",19
+2007,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",238
+2007,IRQ,"Iraq",CHN,"China",USA,"United States of America",41
+2007,IRQ,"Iraq",IDN,"Indonesia",FIN,"Finland",1
+2007,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",10
+2007,IRQ,"Iraq",THA,"Thailand",NZL,"New Zealand",1
+2007,IRQ,"Iraq",All others,"All others",AUS,"Australia",1939
+2007,IRQ,"Iraq",All others,"All others",NOR,"Norway",91
+2007,IRQ,"Iraq",IND,"India",USA,"United States of America",1
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",9
+2007,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",9
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",11
+2007,IRQ,"Iraq",All others,"All others",BRA,"Brazil",4
+2007,IRQ,"Iraq",MYS,"Malaysia",NOR,"Norway",32
+2007,IRQ,"Iraq",IDN,"Indonesia",GBR,"United Kingdom of Great Britain and Northern Ireland",15
+2007,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",214
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",IRL,"Ireland",2
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",NZL,"New Zealand",64
+2007,IRQ,"Iraq",All others,"All others",CAN,"Canada",1488
+2007,IRQ,"Iraq",All others,"All others",SWE,"Sweden",841
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",MEX,"Mexico",15
+2007,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",16
+2007,IRQ,"Iraq",All others,"All others",DEU,"Germany",1
+2007,IRQ,"Iraq",KAZ,"Kazakhstan",SWE,"Sweden",4
+2007,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",30
+2007,IRQ,"Iraq",All others,"All others",USA,"United States of America",15741
+2007,IRQ,"Iraq",MYS,"Malaysia",SWE,"Sweden",36
+2007,IRQ,"Iraq",THA,"Thailand",SWE,"Sweden",4
+2007,IRQ,"Iraq",All others,"All others",DNK,"Denmark",66
+2007,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",4
+2007,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",12
+2007,SYR,"Syrian Arab Rep.",THA,"Thailand",NOR,"Norway",1
+2007,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",10
+2007,IRQ,"Iraq",UZB,"Uzbekistan",NOR,"Norway",1
+2007,IRQ,"Iraq",All others,"All others",ESP,"Spain",5
+2007,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",12
+2007,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",8
+2007,IRQ,"Iraq",UZB,"Uzbekistan",SWE,"Sweden",6
+2007,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",93
+2007,IRQ,"Iraq",All others,"All others",FIN,"Finland",264
+2007,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",11
+2007,IRQ,"Iraq",CHN,"China",NOR,"Norway",2
+2007,IRQ,"Iraq",All others,"All others",FRA,"France",4
+2007,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",4
+2007,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",1
+2008,IRQ,"Iraq",LKA,"Sri Lanka",USA,"United States of America",6
+2008,IRQ,"Iraq",PAK,"Pakistan",SWE,"Sweden",6
+2008,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",2
+2008,IRQ,"Iraq",CHN,"China",SWE,"Sweden",5
+2008,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",16
+2008,IRQ,"Iraq",All others,"All others",IRL,"Ireland",12
+2008,IRQ,"Iraq",KGZ,"Kyrgyzstan",USA,"United States of America",5
+2008,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",6
+2008,IRQ,"Iraq",IND,"India",SWE,"Sweden",5
+2008,IRQ,"Iraq",All others,"All others",LIE,"Liechtenstein",4
+2008,IRQ,"Iraq",THA,"Thailand",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2008,IRQ,"Iraq",All others,"All others",AUS,"Australia",2276
+2008,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",72
+2008,SYR,"Syrian Arab Rep.",IND,"India",SWE,"Sweden",5
+2008,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",6
+2008,IRQ,"Iraq",TJK,"Tajikistan",SWE,"Sweden",2
+2008,IRQ,"Iraq",All others,"All others",LUX,"Luxembourg",17
+2008,IRQ,"Iraq",All others,"All others",CAN,"Canada",2677
+2008,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",1
+2008,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",10
+2008,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",4
+2008,SYR,"Syrian Arab Rep.",THA,"Thailand",NLD,"Netherlands",1
+2008,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",160
+2008,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",28
+2008,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",5
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",NOR,"Norway",3
+2008,IRQ,"Iraq",IND,"India",USA,"United States of America",6
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",28
+2008,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",1
+2008,IRQ,"Iraq",All others,"All others",NOR,"Norway",284
+2008,IRQ,"Iraq",IDN,"Indonesia",SWE,"Sweden",6
+2008,IRQ,"Iraq",All others,"All others",DNK,"Denmark",32
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CAN,"Canada",6
+2008,IRQ,"Iraq",CHN,"China",DNK,"Denmark",6
+2008,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",129
+2008,IRQ,"Iraq",All others,"All others",FIN,"Finland",428
+2008,IRQ,"Iraq",IND,"India",CAN,"Canada",11
+2008,IRQ,"Iraq",All others,"All others",PRT,"Portugal",5
+2008,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",4
+2008,IRQ,"Iraq",LKA,"Sri Lanka",FRA,"France",4
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",CHE,"Switzerland",7
+2008,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",4
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",NLD,"Netherlands",14
+2008,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",12
+2008,IRQ,"Iraq",All others,"All others",SWE,"Sweden",496
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",DNK,"Denmark",8
+2008,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",4
+2008,IRQ,"Iraq",All others,"All others",USA,"United States of America",25636
+2008,SYR,"Syrian Arab Rep.",UZB,"Uzbekistan",USA,"United States of America",1
+2008,IRQ,"Iraq",All others,"All others",FRA,"France",347
+2008,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",1
+2008,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",10
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",ESP,"Spain",2
+2008,IRQ,"Iraq",UZB,"Uzbekistan",USA,"United States of America",4
+2008,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",17
+2008,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",761
+2009,IRQ,"Iraq",TJK,"Tajikistan",CAN,"Canada",2
+2009,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",1
+2009,IRQ,"Iraq",All others,"All others",FRA,"France",44
+2009,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",11
+2009,IRQ,"Iraq",TJK,"Tajikistan",NLD,"Netherlands",2
+2009,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",822
+2009,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",38
+2009,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",4
+2009,IRQ,"Iraq",All others,"All others",ITA,"Italy",212
+2009,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",4
+2009,IRQ,"Iraq",TJK,"Tajikistan",USA,"United States of America",2
+2009,IRQ,"Iraq",All others,"All others",AUS,"Australia",1518
+2009,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",13
+2009,IRQ,"Iraq",CHN,"China",USA,"United States of America",1
+2009,IRQ,"Iraq",All others,"All others",LUX,"Luxembourg",22
+2009,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2009,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",2
+2009,IRQ,"Iraq",All others,"All others",BEL,"Belgium",64
+2009,IRQ,"Iraq",IND,"India",AUS,"Australia",1
+2009,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",274
+2009,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",7
+2009,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",2
+2009,IRQ,"Iraq",All others,"All others",CAN,"Canada",1974
+2009,IRQ,"Iraq",All others,"All others",NOR,"Norway",273
+2009,IRQ,"Iraq",IND,"India",USA,"United States of America",9
+2009,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",24
+2009,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",30
+2009,IRQ,"Iraq",UZB,"Uzbekistan",CHE,"Switzerland",1
+2009,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",45
+2009,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",10
+2009,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",68
+2009,IRQ,"Iraq",UZB,"Uzbekistan",FIN,"Finland",1
+2009,IRQ,"Iraq",All others,"All others",DEU,"Germany",3582
+2009,IRQ,"Iraq",IND,"India",CAN,"Canada",3
+2009,IRQ,"Iraq",All others,"All others",PRT,"Portugal",11
+2009,IRQ,"Iraq",MYS,"Malaysia",SWE,"Sweden",3
+2009,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",9
+2009,IRQ,"Iraq",All others,"All others",DNK,"Denmark",19
+2009,IRQ,"Iraq",THA,"Thailand",SWE,"Sweden",1
+2009,IRQ,"Iraq",All others,"All others",SWE,"Sweden",1037
+2009,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",DNK,"Denmark",4
+2009,IRQ,"Iraq",All others,"All others",ESP,"Spain",1
+2009,IRQ,"Iraq",All others,"All others",USA,"United States of America",25556
+2009,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",2
+2009,IRQ,"Iraq",All others,"All others",FIN,"Finland",477
+2009,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",1
+2010,IRQ,"Iraq",All others,"All others",DEU,"Germany",168
+2010,IRQ,"Iraq",All others,"All others",USA,"United States of America",22054
+2010,IRQ,"Iraq",All others,"All others",DNK,"Denmark",7
+2010,IRQ,"Iraq",PAK,"Pakistan",SWE,"Sweden",2
+2010,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",19
+2010,IRQ,"Iraq",MYS,"Malaysia",DNK,"Denmark",1
+2010,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",19
+2010,IRQ,"Iraq",All others,"All others",FIN,"Finland",279
+2010,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",3
+2010,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",25
+2010,IRQ,"Iraq",All others,"All others",FRA,"France",11
+2010,IRQ,"Iraq",NPL,"Nepal",USA,"United States of America",2
+2010,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",1
+2010,IRQ,"Iraq",THA,"Thailand",DNK,"Denmark",3
+2010,IRQ,"Iraq",MYS,"Malaysia",NLD,"Netherlands",1
+2010,IRQ,"Iraq",MYS,"Malaysia",FIN,"Finland",1
+2010,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",311
+2010,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",11
+2010,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",4
+2010,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1
+2010,IRQ,"Iraq",CHN,"China",USA,"United States of America",15
+2010,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",1
+2010,IRQ,"Iraq",UZB,"Uzbekistan",CAN,"Canada",1
+2010,IRQ,"Iraq",All others,"All others",IRL,"Ireland",27
+2010,IRQ,"Iraq",MYS,"Malaysia",NOR,"Norway",1
+2010,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",17
+2010,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",158
+2010,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",161
+2010,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",70
+2010,IRQ,"Iraq",IND,"India",USA,"United States of America",9
+2010,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",10
+2010,IRQ,"Iraq",CHN,"China",FRA,"France",7
+2010,IRQ,"Iraq",All others,"All others",NOR,"Norway",127
+2010,IRQ,"Iraq",All others,"All others",AUS,"Australia",1054
+2010,IRQ,"Iraq",IND,"India",CAN,"Canada",7
+2010,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",27
+2010,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",NLD,"Netherlands",2
+2010,IRQ,"Iraq",All others,"All others",CAN,"Canada",1963
+2010,IRQ,"Iraq",MYS,"Malaysia",SWE,"Sweden",1
+2010,IRQ,"Iraq",PAK,"Pakistan",NOR,"Norway",2
+2010,IRQ,"Iraq",All others,"All others",PRT,"Portugal",25
+2010,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",45
+2010,IRQ,"Iraq",All others,"All others",SWE,"Sweden",204
+2011,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",13
+2011,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",FIN,"Finland",4
+2011,IRQ,"Iraq",All others,"All others",FIN,"Finland",5
+2011,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",36
+2011,IRQ,"Iraq",All others,"All others",FRA,"France",3
+2011,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",1
+2011,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",42
+2011,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",30
+2011,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",1
+2011,IRQ,"Iraq",All others,"All others",IRL,"Ireland",6
+2011,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",7
+2011,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",1
+2011,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",110
+2011,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1
+2011,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",103
+2011,IRQ,"Iraq",CHN,"China",USA,"United States of America",2
+2011,IRQ,"Iraq",All others,"All others",NOR,"Norway",12
+2011,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",14
+2011,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",1
+2011,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",214
+2011,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",26
+2011,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",56
+2011,IRQ,"Iraq",All others,"All others",AUS,"Australia",1088
+2011,IRQ,"Iraq",All others,"All others",SWE,"Sweden",40
+2011,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",10
+2011,IRQ,"Iraq",CHN,"China",FRA,"France",6
+2011,IRQ,"Iraq",All others,"All others",CAN,"Canada",2860
+2011,IRQ,"Iraq",All others,"All others",USA,"United States of America",15380
+2011,IRQ,"Iraq",THA,"Thailand",FIN,"Finland",1
+2011,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",38
+2011,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",1
+2011,IRQ,"Iraq",All others,"All others",DNK,"Denmark",6
+2011,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",1
+2012,IRQ,"Iraq",All others,"All others",DNK,"Denmark",6
+2012,IRQ,"Iraq",VUT,"Vanuatu",AUS,"Australia",1
+2012,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",10
+2012,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",1
+2012,SYR,"Syrian Arab Rep.",THA,"Thailand",SWE,"Sweden",1
+2012,IRQ,"Iraq",All others,"All others",FIN,"Finland",38
+2012,IRQ,"Iraq",CHN,"China",SWE,"Sweden",6
+2012,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",2
+2012,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",3
+2012,IRQ,"Iraq",PAK,"Pakistan",AUS,"Australia",7
+2012,IRQ,"Iraq",All others,"All others",FRA,"France",1
+2012,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",55
+2012,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",86
+2012,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",15
+2012,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",51
+2012,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",114
+2012,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",14
+2012,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",6
+2012,IRQ,"Iraq",All others,"All others",NOR,"Norway",18
+2012,IRQ,"Iraq",PAK,"Pakistan",CAN,"Canada",8
+2012,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",6
+2012,IRQ,"Iraq",IDN,"Indonesia",SWE,"Sweden",1
+2012,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",1
+2012,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",35
+2012,IRQ,"Iraq",CHN,"China",USA,"United States of America",4
+2012,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",6
+2012,SYR,"Syrian Arab Rep.",LKA,"Sri Lanka",USA,"United States of America",1
+2012,IRQ,"Iraq",IND,"India",USA,"United States of America",8
+2012,IRQ,"Iraq",All others,"All others",SWE,"Sweden",17
+2012,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",54
+2012,IRQ,"Iraq",All others,"All others",AUS,"Australia",3153
+2012,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",38
+2012,SYR,"Syrian Arab Rep.",THA,"Thailand",NZL,"New Zealand",1
+2012,IRQ,"Iraq",All others,"All others",USA,"United States of America",6316
+2012,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",5
+2012,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",3
+2012,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",1
+2012,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",1
+2012,IRQ,"Iraq",All others,"All others",CAN,"Canada",567
+2012,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",2
+2012,IRQ,"Iraq",All others,"All others",DEU,"Germany",160
+2012,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",10
+2012,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",17
+2013,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",113
+2013,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",175
+2013,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",98
+2013,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",9
+2013,IRQ,"Iraq",THA,"Thailand",NOR,"Norway",3
+2013,SYR,"Syrian Arab Rep.",All others,"All others",AUT,"Austria",32
+2013,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",162
+2013,IRQ,"Iraq",VUT,"Vanuatu",NZL,"New Zealand",1
+2013,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",9
+2013,IRQ,"Iraq",PAK,"Pakistan",USA,"United States of America",7
+2013,IRQ,"Iraq",All others,"All others",NOR,"Norway",1
+2013,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",103
+2013,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",1
+2013,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",424
+2013,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",65
+2013,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",21
+2013,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",84
+2013,IRQ,"Iraq",KAZ,"Kazakhstan",FIN,"Finland",2
+2013,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",4253
+2013,SYR,"Syrian Arab Rep.",THA,"Thailand",USA,"United States of America",4
+2013,SYR,"Syrian Arab Rep.",THA,"Thailand",NLD,"Netherlands",6
+2013,IRQ,"Iraq",KAZ,"Kazakhstan",NLD,"Netherlands",2
+2013,IRQ,"Iraq",All others,"All others",AUS,"Australia",2426
+2013,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",1
+2013,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",35
+2013,IRQ,"Iraq",KAZ,"Kazakhstan",NOR,"Norway",2
+2013,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",11
+2013,IRQ,"Iraq",All others,"All others",CAN,"Canada",2358
+2013,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",72
+2013,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",6
+2013,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",7
+2013,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",26
+2013,IRQ,"Iraq",All others,"All others",PRT,"Portugal",6
+2013,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",1
+2013,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2013,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",41
+2013,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NZL,"New Zealand",3
+2013,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",19
+2013,IRQ,"Iraq",All others,"All others",DEU,"Germany",349
+2013,IRQ,"Iraq",All others,"All others",ROU,"Romania",82
+2013,SYR,"Syrian Arab Rep.",All others,"All others",HUN,"Hungary",5
+2013,IRQ,"Iraq",All others,"All others",SWE,"Sweden",1
+2013,IRQ,"Iraq",All others,"All others",FIN,"Finland",24
+2013,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",49
+2013,IRQ,"Iraq",THA,"Thailand",SWE,"Sweden",2
+2013,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",1
+2013,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",4
+2013,IRQ,"Iraq",All others,"All others",USA,"United States of America",7350
+2013,IRQ,"Iraq",All others,"All others",FRA,"France",15
+2013,IRQ,"Iraq",THA,"Thailand",NLD,"Netherlands",3
+2013,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",2
+2013,SYR,"Syrian Arab Rep.",All others,"All others",LUX,"Luxembourg",25
+2014,SYR,"Syrian Arab Rep.",All others,"All others",AUT,"Austria",457
+2014,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",544
+2014,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",12
+2014,IRQ,"Iraq",All others,"All others",FRA,"France",9
+2014,SYR,"Syrian Arab Rep.",IND,"India",CAN,"Canada",1
+2014,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",96
+2014,SYR,"Syrian Arab Rep.",SGP,"Singapore",CAN,"Canada",1
+2014,SYR,"Syrian Arab Rep.",MYS,"Malaysia",SWE,"Sweden",18
+2014,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",242
+2014,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",121
+2014,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",3
+2014,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",110
+2014,SYR,"Syrian Arab Rep.",All others,"All others",BLR,"Belarus",24
+2014,SYR,"Syrian Arab Rep.",All others,"All others",HUN,"Hungary",4
+2014,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",27
+2014,IRQ,"Iraq",All others,"All others",IRL,"Ireland",9
+2014,IRQ,"Iraq",PAK,"Pakistan",AUS,"Australia",1
+2014,SYR,"Syrian Arab Rep.",MYS,"Malaysia",DEU,"Germany",4
+2014,SYR,"Syrian Arab Rep.",All others,"All others",BRA,"Brazil",2
+2014,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",764
+2014,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",114
+2014,SYR,"Syrian Arab Rep.",PAK,"Pakistan",FIN,"Finland",4
+2014,IRQ,"Iraq",All others,"All others",MEX,"Mexico",1
+2014,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",2784
+2014,SYR,"Syrian Arab Rep.",All others,"All others",URY,"Uruguay",188
+2014,IRQ,"Iraq",All others,"All others",AUS,"Australia",1149
+2014,IRQ,"Iraq",NPL,"Nepal",USA,"United States of America",1
+2014,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",14
+2014,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",20
+2014,SYR,"Syrian Arab Rep.",THA,"Thailand",USA,"United States of America",35
+2014,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",378
+2014,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",10091
+2014,IRQ,"Iraq",All others,"All others",CAN,"Canada",2984
+2014,SYR,"Syrian Arab Rep.",All others,"All others",LIE,"Liechtenstein",20
+2014,SYR,"Syrian Arab Rep.",THA,"Thailand",NLD,"Netherlands",24
+2014,IRQ,"Iraq",All others,"All others",NOR,"Norway",17
+2014,SYR,"Syrian Arab Rep.",PAK,"Pakistan",NOR,"Norway",4
+2014,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",5
+2014,SYR,"Syrian Arab Rep.",All others,"All others",CZE,"Czechia",11
+2014,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",24
+2014,SYR,"Syrian Arab Rep.",All others,"All others",LUX,"Luxembourg",59
+2014,SYR,"Syrian Arab Rep.",THA,"Thailand",NZL,"New Zealand",1
+2014,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",84
+2014,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",3
+2014,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",2104
+2014,IRQ,"Iraq",All others,"All others",CZE,"Czechia",9
+2014,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",5
+2014,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",145
+2014,IRQ,"Iraq",All others,"All others",SWE,"Sweden",12
+2014,SYR,"Syrian Arab Rep.",IDN,"Indonesia",USA,"United States of America",28
+2014,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",1
+2014,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",52
+2014,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",165
+2014,IRQ,"Iraq",All others,"All others",DEU,"Germany",75
+2014,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",39
+2014,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1189
+2014,SYR,"Syrian Arab Rep.",MYS,"Malaysia",CAN,"Canada",17
+2014,IRQ,"Iraq",All others,"All others",USA,"United States of America",7054
+2014,SYR,"Syrian Arab Rep.",PAK,"Pakistan",USA,"United States of America",7
+2014,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",202
+2014,IRQ,"Iraq",All others,"All others",DNK,"Denmark",21
+2014,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",588
+2014,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",5
+2014,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",65
+2014,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",625
+2014,SYR,"Syrian Arab Rep.",IDN,"Indonesia",CAN,"Canada",1
+2014,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",22
+2014,IRQ,"Iraq",All others,"All others",FIN,"Finland",37
+2015,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",42
+2015,IRQ,"Iraq",All others,"All others",SWE,"Sweden",124
+2015,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",50
+2015,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",763
+2015,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",10
+2015,IRQ,"Iraq",All others,"All others",DNK,"Denmark",1
+2015,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",20
+2015,IRQ,"Iraq",All others,"All others",USA,"United States of America",7166
+2015,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",1311
+2015,IRQ,"Iraq",All others,"All others",FIN,"Finland",5
+2015,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",672
+2015,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",5311
+2015,SYR,"Syrian Arab Rep.",THA,"Thailand",SWE,"Sweden",2
+2015,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",2721
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",SWE,"Sweden",32
+2015,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",16139
+2015,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",21
+2015,IRQ,"Iraq",All others,"All others",FRA,"France",10
+2015,IRQ,"Iraq",MYS,"Malaysia",DNK,"Denmark",4
+2015,SYR,"Syrian Arab Rep.",IND,"India",SWE,"Sweden",1
+2015,SYR,"Syrian Arab Rep.",All others,"All others",AUT,"Austria",612
+2015,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",5
+2015,SYR,"Syrian Arab Rep.",All others,"All others",HUN,"Hungary",23
+2015,SYR,"Syrian Arab Rep.",CHN,"China",USA,"United States of America",12
+2015,SYR,"Syrian Arab Rep.",IDN,"Indonesia",NZL,"New Zealand",6
+2015,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",149
+2015,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",504
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",DNK,"Denmark",1
+2015,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",560
+2015,IRQ,"Iraq",All others,"All others",IRL,"Ireland",64
+2015,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",18191
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",FRA,"France",4
+2015,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",63
+2015,IRQ,"Iraq",All others,"All others",ITA,"Italy",59
+2015,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",454
+2015,SYR,"Syrian Arab Rep.",THA,"Thailand",USA,"United States of America",18
+2015,IRQ,"Iraq",All others,"All others",AUS,"Australia",1281
+2015,SYR,"Syrian Arab Rep.",All others,"All others",ITA,"Italy",369
+2015,SYR,"Syrian Arab Rep.",THA,"Thailand",NLD,"Netherlands",7
+2015,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",17
+2015,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",12
+2015,SYR,"Syrian Arab Rep.",All others,"All others",CZE,"Czechia",205
+2015,IRQ,"Iraq",CHN,"China",USA,"United States of America",1
+2015,IRQ,"Iraq",All others,"All others",CAN,"Canada",1862
+2015,SYR,"Syrian Arab Rep.",All others,"All others",MCO,"Monaco",13
+2015,IRQ,"Iraq",All others,"All others",NOR,"Norway",5
+2015,SYR,"Syrian Arab Rep.",THA,"Thailand",NZL,"New Zealand",1
+2015,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",2
+2015,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",11
+2015,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",448
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NZL,"New Zealand",19
+2015,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",119
+2015,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",340
+2015,IRQ,"Iraq",IND,"India",USA,"United States of America",4
+2015,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",15
+2015,SYR,"Syrian Arab Rep.",IDN,"Indonesia",USA,"United States of America",13
+2015,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",1
+2015,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",72
+2015,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",335
+2015,IRQ,"Iraq",All others,"All others",CZE,"Czechia",23
+2015,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",3420
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",124
+2015,IRQ,"Iraq",All others,"All others",PRT,"Portugal",3
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",CAN,"Canada",1
+2015,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",6
+2015,SYR,"Syrian Arab Rep.",MYS,"Malaysia",AUS,"Australia",1
+2015,IRQ,"Iraq",All others,"All others",DEU,"Germany",28
+2015,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",578
+2016,SYR,"Syrian Arab Rep.",MYS,"Malaysia",CAN,"Canada",1
+2016,IRQ,"Iraq",All others,"All others",IRL,"Ireland",11
+2016,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",3576
+2016,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",16891
+2016,SYR,"Syrian Arab Rep.",All others,"All others",HUN,"Hungary",4
+2016,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",410
+2016,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",22
+2016,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",37
+2016,IRQ,"Iraq",All others,"All others",ITA,"Italy",8
+2016,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",866
+2016,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",314
+2016,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",6
+2016,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",46
+2016,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",32
+2016,SYR,"Syrian Arab Rep.",All others,"All others",CZE,"Czechia",105
+2016,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",61
+2016,SYR,"Syrian Arab Rep.",All others,"All others",ROU,"Romania",15
+2016,SYR,"Syrian Arab Rep.",THA,"Thailand",SWE,"Sweden",5
+2016,IRQ,"Iraq",All others,"All others",NOR,"Norway",13
+2016,SYR,"Syrian Arab Rep.",MYS,"Malaysia",SWE,"Sweden",51
+2016,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",2205
+2016,IRQ,"Iraq",All others,"All others",AUS,"Australia",873
+2016,SYR,"Syrian Arab Rep.",All others,"All others",ITA,"Italy",1094
+2016,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",10
+2016,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",956
+2016,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",14
+2016,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",3
+2016,SYR,"Syrian Arab Rep.",All others,"All others",DNK,"Denmark",5
+2016,SYR,"Syrian Arab Rep.",CHN,"China",USA,"United States of America",9
+2016,IRQ,"Iraq",All others,"All others",CAN,"Canada",362
+2016,SYR,"Syrian Arab Rep.",All others,"All others",LTU,"Lithuania",85
+2016,SYR,"Syrian Arab Rep.",IDN,"Indonesia",NZL,"New Zealand",1
+2016,IRQ,"Iraq",All others,"All others",SWE,"Sweden",95
+2016,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",34354
+2016,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",711
+2016,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",187
+2016,SYR,"Syrian Arab Rep.",All others,"All others",LUX,"Luxembourg",164
+2016,IRQ,"Iraq",All others,"All others",USA,"United States of America",10649
+2016,SYR,"Syrian Arab Rep.",All others,"All others",EST,"Estonia",66
+2016,IRQ,"Iraq",All others,"All others",CZE,"Czechia",2
+2016,SYR,"Syrian Arab Rep.",PAK,"Pakistan",NOR,"Norway",5
+2016,SYR,"Syrian Arab Rep.",All others,"All others",LVA,"Latvia",53
+2016,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",413
+2016,SYR,"Syrian Arab Rep.",THA,"Thailand",USA,"United States of America",16
+2016,SYR,"Syrian Arab Rep.",IDN,"Indonesia",AUS,"Australia",4
+2016,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",997
+2016,IRQ,"Iraq",All others,"All others",DNK,"Denmark",8
+2016,SYR,"Syrian Arab Rep.",All others,"All others",MCO,"Monaco",4
+2016,SYR,"Syrian Arab Rep.",All others,"All others",AUT,"Austria",229
+2016,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",7
+2016,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",6
+2016,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",4280
+2016,IRQ,"Iraq",CHN,"China",USA,"United States of America",4
+2016,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",3
+2016,SYR,"Syrian Arab Rep.",THA,"Thailand",NZL,"New Zealand",5
+2016,IRQ,"Iraq",All others,"All others",FRA,"France",15
+2016,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",11
+2016,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",14
+2016,SYR,"Syrian Arab Rep.",All others,"All others",MLT,"Malta",6
+2016,IRQ,"Iraq",IND,"India",CAN,"Canada",3
+2016,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",396
+2016,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NZL,"New Zealand",5
+2016,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",7476
+2016,IRQ,"Iraq",IND,"India",USA,"United States of America",6
+2016,IRQ,"Iraq",MYS,"Malaysia",SWE,"Sweden",14
+2016,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",371
+2016,SYR,"Syrian Arab Rep.",PAK,"Pakistan",USA,"United States of America",2
+2016,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",1190
+2016,SYR,"Syrian Arab Rep.",All others,"All others",BGR,"Bulgaria",41
+2016,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",59
+2016,SYR,"Syrian Arab Rep.",All others,"All others",HRV,"Croatia",35
+2016,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",88
+2017,SYR,"Syrian Arab Rep.",All others,"All others",ITA,"Italy",1062
+2017,IRQ,"Iraq",MYS,"Malaysia",USA,"United States of America",1
+2017,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",2875
+2017,IRQ,"Iraq",All others,"All others",FRA,"France",25
+2017,SYR,"Syrian Arab Rep.",MYS,"Malaysia",AUS,"Australia",9
+2017,SYR,"Syrian Arab Rep.",All others,"All others",CYP,"Cyprus",6
+2017,IRQ,"Iraq",All others,"All others",USA,"United States of America",1670
+2017,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",1
+2017,SYR,"Syrian Arab Rep.",All others,"All others",LTU,"Lithuania",191
+2017,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",4
+2017,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",3896
+2017,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",650
+2017,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",3652
+2017,SYR,"Syrian Arab Rep.",All others,"All others",ARG,"Argentina",105
+2017,SYR,"Syrian Arab Rep.",All others,"All others",LUX,"Luxembourg",216
+2017,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",2
+2017,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",24
+2017,IRQ,"Iraq",All others,"All others",IRL,"Ireland",5
+2017,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",1369
+2017,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",52
+2017,IRQ,"Iraq",IDN,"Indonesia",NZL,"New Zealand",1
+2017,SYR,"Syrian Arab Rep.",All others,"All others",LVA,"Latvia",65
+2017,IRQ,"Iraq",All others,"All others",ISL,"Iceland",36
+2017,SYR,"Syrian Arab Rep.",All others,"All others",EST,"Estonia",143
+2017,SYR,"Syrian Arab Rep.",All others,"All others",AUT,"Austria",253
+2017,SYR,"Syrian Arab Rep.",All others,"All others",MLT,"Malta",11
+2017,IRQ,"Iraq",All others,"All others",ITA,"Italy",4
+2017,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",664
+2017,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",1357
+2017,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",2835
+2017,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",20
+2017,IRQ,"Iraq",All others,"All others",LUX,"Luxembourg",2
+2017,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",4207
+2017,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",1323
+2017,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",3001
+2017,IRQ,"Iraq",All others,"All others",AUS,"Australia",11
+2017,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NOR,"Norway",1
+2017,IRQ,"Iraq",All others,"All others",MCO,"Monaco",30
+2017,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",7072
+2017,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",677
+2017,IRQ,"Iraq",All others,"All others",CAN,"Canada",388
+2017,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",9
+2017,SYR,"Syrian Arab Rep.",All others,"All others",HRV,"Croatia",157
+2017,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",221
+2017,IRQ,"Iraq",All others,"All others",CHE,"Switzerland",1
+2017,SYR,"Syrian Arab Rep.",LKA,"Sri Lanka",USA,"United States of America",4
+2017,SYR,"Syrian Arab Rep.",THA,"Thailand",USA,"United States of America",40
+2017,IRQ,"Iraq",All others,"All others",NOR,"Norway",8
+2017,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",303
+2017,SYR,"Syrian Arab Rep.",All others,"All others",ROU,"Romania",48
+2017,IRQ,"Iraq",All others,"All others",DEU,"Germany",10
+2017,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",4
+2017,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",1
+2017,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",1307
+2017,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",52
+2017,SYR,"Syrian Arab Rep.",IDN,"Indonesia",USA,"United States of America",1
+2017,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",AUS,"Australia",2
+2017,IRQ,"Iraq",THA,"Thailand",AUS,"Australia",31
+2017,IRQ,"Iraq",THA,"Thailand",USA,"United States of America",3
+2017,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",21
+2017,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NZL,"New Zealand",1
+2017,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",9
+2017,SYR,"Syrian Arab Rep.",All others,"All others",SVN,"Slovenia",67
+2017,IRQ,"Iraq",All others,"All others",FIN,"Finland",5
+2017,SYR,"Syrian Arab Rep.",All others,"All others",CHL,"Chile",95
+2017,IRQ,"Iraq",All others,"All others",SWE,"Sweden",56
+2018,SYR,"Syrian Arab Rep.",IND,"India",AUS,"Australia",2
+2018,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",1125
+2018,SYR,"Syrian Arab Rep.",PLW,"Palau",SWE,"Sweden",4
+2018,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",20
+2018,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",2376
+2018,SYR,"Syrian Arab Rep.",IDN,"Indonesia",CAN,"Canada",3
+2018,IRQ,"Iraq",All others,"All others",PRT,"Portugal",108
+2018,SYR,"Syrian Arab Rep.",All others,"All others",EST,"Estonia",88
+2018,SYR,"Syrian Arab Rep.",MYS,"Malaysia",CAN,"Canada",15
+2018,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1212
+2018,IRQ,"Iraq",All others,"All others",SWE,"Sweden",72
+2018,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",2
+2018,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",628
+2018,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",225
+2018,IRQ,"Iraq",All others,"All others",AUS,"Australia",11
+2018,IRQ,"Iraq",IRN,"Iran (Islamic Rep. of)",SWE,"Sweden",2
+2018,IRQ,"Iraq",All others,"All others",USA,"United States of America",961
+2018,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",1
+2018,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",2943
+2018,IRQ,"Iraq",IDN,"Indonesia",USA,"United States of America",9
+2018,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",266
+2018,IRQ,"Iraq",All others,"All others",BEL,"Belgium",1
+2018,SYR,"Syrian Arab Rep.",All others,"All others",ARG,"Argentina",9
+2018,IRQ,"Iraq",CHN,"China",CAN,"Canada",3
+2018,IRQ,"Iraq",THA,"Thailand",NZL,"New Zealand",3
+2018,SYR,"Syrian Arab Rep.",IND,"India",USA,"United States of America",7
+2018,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",4079
+2018,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",2146
+2018,SYR,"Syrian Arab Rep.",MYS,"Malaysia",SWE,"Sweden",1
+2018,IRQ,"Iraq",All others,"All others",CAN,"Canada",966
+2018,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",50
+2018,SYR,"Syrian Arab Rep.",All others,"All others",HRV,"Croatia",330
+2018,IRQ,"Iraq",All others,"All others",FRA,"France",17
+2018,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",58
+2018,SYR,"Syrian Arab Rep.",CHN,"China",USA,"United States of America",15
+2018,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",1086
+2018,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",4
+2018,SYR,"Syrian Arab Rep.",LKA,"Sri Lanka",NLD,"Netherlands",7
+2018,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",389
+2018,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",563
+2018,SYR,"Syrian Arab Rep.",MYS,"Malaysia",AUS,"Australia",2
+2018,SYR,"Syrian Arab Rep.",All others,"All others",BGR,"Bulgaria",66
+2018,SYR,"Syrian Arab Rep.",All others,"All others",ISL,"Iceland",61
+2018,IRQ,"Iraq",All others,"All others",IRL,"Ireland",5
+2018,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",5490
+2018,SYR,"Syrian Arab Rep.",All others,"All others",ITA,"Italy",484
+2018,SYR,"Syrian Arab Rep.",IDN,"Indonesia",AUS,"Australia",1
+2018,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",12
+2018,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",1052
+2018,SYR,"Syrian Arab Rep.",LKA,"Sri Lanka",USA,"United States of America",3
+2018,SYR,"Syrian Arab Rep.",All others,"All others",LTU,"Lithuania",13
+2018,IRQ,"Iraq",CHN,"China",USA,"United States of America",5
+2018,IRQ,"Iraq",All others,"All others",NOR,"Norway",10
+2018,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",9
+2018,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",3928
+2018,SYR,"Syrian Arab Rep.",THA,"Thailand",NZL,"New Zealand",15
+2018,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",51
+2018,SYR,"Syrian Arab Rep.",All others,"All others",LVA,"Latvia",4
+2018,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",3
+2018,IRQ,"Iraq",All others,"All others",NZL,"New Zealand",6
+2019,SYR,"Syrian Arab Rep.",All others,"All others",AUS,"Australia",281
+2019,SYR,"Syrian Arab Rep.",MYS,"Malaysia",NZL,"New Zealand",4
+2019,SYR,"Syrian Arab Rep.",All others,"All others",HRV,"Croatia",41
+2019,IRQ,"Iraq",IDN,"Indonesia",CAN,"Canada",113
+2019,IRQ,"Iraq",MYS,"Malaysia",AUS,"Australia",13
+2019,IRQ,"Iraq",All others,"All others",FIN,"Finland",2
+2019,SYR,"Syrian Arab Rep.",All others,"All others",BEL,"Belgium",744
+2019,SYR,"Syrian Arab Rep.",All others,"All others",IRL,"Ireland",851
+2019,IRQ,"Iraq",THA,"Thailand",CAN,"Canada",4
+2019,SYR,"Syrian Arab Rep.",IDN,"Indonesia",CAN,"Canada",1
+2019,IRQ,"Iraq",All others,"All others",FRA,"France",1
+2019,SYR,"Syrian Arab Rep.",MYS,"Malaysia",CAN,"Canada",16
+2019,SYR,"Syrian Arab Rep.",All others,"All others",BGR,"Bulgaria",168
+2019,IRQ,"Iraq",IND,"India",SWE,"Sweden",7
+2019,SYR,"Syrian Arab Rep.",All others,"All others",ITA,"Italy",410
+2019,SYR,"Syrian Arab Rep.",THA,"Thailand",CAN,"Canada",3
+2019,SYR,"Syrian Arab Rep.",CHN,"China",CAN,"Canada",1
+2019,SYR,"Syrian Arab Rep.",MYS,"Malaysia",USA,"United States of America",2
+2019,IRQ,"Iraq",THA,"Thailand",GBR,"United Kingdom of Great Britain and Northern Ireland",1
+2019,IRQ,"Iraq",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",204
+2019,SYR,"Syrian Arab Rep.",All others,"All others",CAN,"Canada",6481
+2019,SYR,"Syrian Arab Rep.",All others,"All others",MLT,"Malta",17
+2019,IRQ,"Iraq",All others,"All others",IRL,"Ireland",17
+2019,IRQ,"Iraq",IDN,"Indonesia",AUS,"Australia",1
+2019,SYR,"Syrian Arab Rep.",All others,"All others",CHE,"Switzerland",1073
+2019,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",993
+2019,IRQ,"Iraq",MYS,"Malaysia",FIN,"Finland",1
+2019,IRQ,"Iraq",All others,"All others",NLD,"Netherlands",7
+2019,IRQ,"Iraq",MYS,"Malaysia",NZL,"New Zealand",4
+2019,SYR,"Syrian Arab Rep.",LKA,"Sri Lanka",CAN,"Canada",14
+2019,SYR,"Syrian Arab Rep.",All others,"All others",DEU,"Germany",7961
+2019,SYR,"Syrian Arab Rep.",MYS,"Malaysia",SWE,"Sweden",2
+2019,SYR,"Syrian Arab Rep.",All others,"All others",NOR,"Norway",1627
+2019,IRQ,"Iraq",All others,"All others",NOR,"Norway",4
+2019,SYR,"Syrian Arab Rep.",All others,"All others",ESP,"Spain",1082
+2019,SYR,"Syrian Arab Rep.",CHN,"China",USA,"United States of America",2
+2019,IRQ,"Iraq",All others,"All others",AUS,"Australia",1337
+2019,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",16
+2019,IRQ,"Iraq",All others,"All others",PRT,"Portugal",265
+2019,SYR,"Syrian Arab Rep.",THA,"Thailand",AUS,"Australia",2
+2019,SYR,"Syrian Arab Rep.",All others,"All others",EST,"Estonia",5
+2019,IRQ,"Iraq",All others,"All others",CAN,"Canada",451
+2019,SYR,"Syrian Arab Rep.",All others,"All others",PRT,"Portugal",539
+2019,SYR,"Syrian Arab Rep.",MYS,"Malaysia",AUS,"Australia",20
+2019,IRQ,"Iraq",All others,"All others",SWE,"Sweden",9
+2019,SYR,"Syrian Arab Rep.",All others,"All others",FIN,"Finland",563
+2019,IRQ,"Iraq",All others,"All others",DEU,"Germany",84
+2019,SYR,"Syrian Arab Rep.",All others,"All others",ROU,"Romania",198
+2019,IRQ,"Iraq",All others,"All others",USA,"United States of America",61
+2019,SYR,"Syrian Arab Rep.",All others,"All others",FRA,"France",1620
+2019,IRQ,"Iraq",All others,"All others",DNK,"Denmark",1
+2019,SYR,"Syrian Arab Rep.",All others,"All others",SWE,"Sweden",2473
+2019,SYR,"Syrian Arab Rep.",All others,"All others",ARG,"Argentina",5
+2019,IRQ,"Iraq",IND,"India",CAN,"Canada",5
+2019,SYR,"Syrian Arab Rep.",All others,"All others",GBR,"United Kingdom of Great Britain and Northern Ireland",2225
+2019,IRQ,"Iraq",CHN,"China",USA,"United States of America",9
+2019,IRQ,"Iraq",MYS,"Malaysia",CAN,"Canada",4
+2019,IRQ,"Iraq",All others,"All others",ESP,"Spain",1
+2019,SYR,"Syrian Arab Rep.",All others,"All others",USA,"United States of America",220
+
+"Some data presented may differ from statistics published previously due to retroactive changes or the inclusion of previously unavailable data. In addition, resettlement departure figures reported by UNHCR may not match resettlement statistics published by States as Government figures may include individuals who were resettled outside of UNHCR processes. More information about UNHCR's resettlement programe can be found at http://www.unhcr.org/resettlement.html."
