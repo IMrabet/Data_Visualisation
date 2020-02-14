@@ -1,7 +1,3 @@
-"IRQ,SYR"
-Country of asylum:,"ATG,ARG,ABW,BHS,BRB,BLZ,BOL,VGB,CYM,CHL,COL,CRI,CUB,CUW,DOM,ECU,SLV,GRD,GTM,GUY,HTI,HND,JAM,MEX,NIC,PAN,PER,KNA,LCA,SUR,TTO,TCA,VEN"
-Resettlement country:,"ALB,ARG,AUS,AUT,BLR,BEL,BRA,BGR,CAN,CHL,HRV,CYP,CZE,DNK,EST,FIN,FRA,DEU,HUN,ISL,IRL,ITA,JPN,LVA,LIE,LTU,LUX,MLT,MEX,MCO,NLD,NZL,NOR,PRY,POL,PRT,KOR,ROU,SVK,SVN,ESP,SWE,CHE,GBR,USA,URY"
-
 Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Asylum,Country_of_Asylum_ISO,Country_of_Resettlement_ISO,Country_of_Resettlement,Total_departures_persons
 2003,IRQ,"Iraq",All others,"All others",DNK,"Denmark",38
 2003,SYR,"Syrian Arab Rep.",All others,"All others",NZL,"New Zealand",4
@@ -55,5 +51,3 @@ Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Asylum,Country_of_Asylum
 2019,SYR,"Syrian Arab Rep.",TTO,"Trinidad and Tobago",CAN,"Canada",2
 2019,SYR,"Syrian Arab Rep.",CUB,"Cuba",SWE,"Sweden",6
 2019,IRQ,"Iraq",CUB,"Cuba",NLD,"Netherlands",1
-
-"Some data presented may differ from statistics published previously due to retroactive changes or the inclusion of previously unavailable data. In addition, resettlement departure figures reported by UNHCR may not match resettlement statistics published by States as Government figures may include individuals who were resettled outside of UNHCR processes. More information about UNHCR's resettlement programe can be found at http://www.unhcr.org/resettlement.html."
