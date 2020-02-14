@@ -1,4 +1,4 @@
-Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Asylum,Country_of_Asylum_ISO,Country_of_Resettlement_ISO,Country_of_Resettlement,Total_departures_persons
+Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Asylum,Country_of_Asylum_ISO,Country_of_Resettlement_ISO,Country_of_Resettlement,Total_submissons_persons
 2003,IRQ,"Iraq",All others,"All others",FRA,"France",1
 2003,SYR,"Syrian Arab Rep.",All others,"All others",NLD,"Netherlands",1
 2003,IRQ,"Iraq",CUB,"Cuba",NLD,"Netherlands",1
