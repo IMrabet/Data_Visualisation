@@ -8,7 +8,7 @@ Years selected:,"2019, 2018, 2017"
 Country of origin:,"IRQ,SYR"
 Resettlement country:,"ALB,ARG,AUS,AUT,BLR,BEL,BRA,BGR,CAN,CHL,HRV,CYP,CZE,DNK,EST,FIN,FRA,DEU,HUN,ISL,IRL,ITA,JPN,LVA,LIE,LTU,LUX,MLT,MEX,MCO,NLD,NZL,NOR,PRY,POL,PRT,KOR,ROU,SVK,SVN,ESP,SWE,CHE,GBR,USA,URY"
 
-Year,Country of Origin (ISO),Country of Origin,Country of Resettlement (ISO),Country of Resettlement,Female 0-17,Female 18-59,Female 60+,Female (unknown age),Female Total,Male 0-17,Male 18-59,Male 60+,Male (unknown age),Male Total,Other/Unknown,Grand Total
+Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Resettlement_ISO,Country_of_Resettlement,Female_0-17,Female_18-59,Female_60+,Female_unknown_age,Female_Total,Male_0-17,Male_18-59,Male_60+,Male_unknown_age,Male_Total,Other_Unknown,Grand_Total
 2017,SYR,"Syrian Arab Rep.",NOR,"Norway",816,573,22,0,1411,1015,567,9,0,1591,0,3002
 2017,IRQ,"Iraq",NLD,"Netherlands",1,1,0,0,2,1,6,0,0,7,0,9
 2017,IRQ,"Iraq",IRL,"Ireland",0,2,0,0,2,0,3,0,0,3,0,5
