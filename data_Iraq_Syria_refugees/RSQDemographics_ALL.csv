@@ -1,4 +1,4 @@
-Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Resettlement_ISO,Country_of_Resettlement,Female_0-17,Female_18-59,Female_60+,Female_unknown_age,Female_Total,Male_0-17,Male_18-59,Male_60+,Male_unknown_age,Male_Total,Other_Unknown,Grand_Total
+Year,Country_of_Origin_ISO,Country_of_Origin,Country_of_Resettlement_ISO,Country_of_Resettlement,Female_0_17,Female_18_59,Female_60_plus,Female_unknown_age,Female_Total,Male_0_17,Male_18-59,Male_60_plus,Male_unknown_age,Male_Total,Other_Unknown,Grand_Total
 2017,SYR,"Syrian Arab Rep.",NOR,"Norway",816,573,22,0,1411,1015,567,9,0,1591,0,3002
 2017,IRQ,"Iraq",NLD,"Netherlands",1,1,0,0,2,1,6,0,0,7,0,9
 2017,IRQ,"Iraq",IRL,"Ireland",0,2,0,0,2,0,3,0,0,3,0,5
