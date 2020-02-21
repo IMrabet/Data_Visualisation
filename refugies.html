@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <style>
+    div.tooltip {	
+    position: absolute;			
+    text-align: center;	
+    color: black;
+    font-size: 18px;
+    padding: 10px;				
+    font: 12px sans-serif;		
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;}
+    div.title1 {	
+    position: absolute;			
+    text-align: center;	
+    color: black;
+    font-size: 19px;
+    padding: 5px;				
+    font: 19px Cursive;		
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    background-color:rgba(76, 175, 80, 0.3);
+    left:0px;
+    top:0px;}
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+  
+  </style>
+</head>
+
+<body>
+ <!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+  width = 1200 - margin.left - margin.right,
+  height = 600 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+.append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+const America=["USA","URY","MEX","CAN","BRA","ARG","ATG","ABW","BHS","BLZ","BOL","VGB","CYM","CHL","COL","CRI","CUB","CUW","DOM","ECU","SLV","GRD","GTM","GUY","HTI","HND","JAM","MEX","NIC","PAN","PER","KNA","LCA","SUR","TTO","TCA","VEN"];
+const Europe =["ALB","AUT","BLR","BEL","BGR","HRV","CYP","CZE","DNK","EST","FIN","FRA","DEU","HUN","ISL","IRL","ITA","LVA","LIE","LTU","LUX","MLT","MCO","NLD","NOR","PRY","POL","PRT","ROU","SVK","SVN","ESP","SWE","CHE","GBR","ARM","AZE","BIH","GEO","MKD","MDA","RUS","SRB","TUR","UKR"];
+const Africa =["DZA","LBY","MRT","MAR","TUN"];
+const Asia =["KOR","JPN","IRQ","SYR","AFG","BGD","KHM","CHN","HKG","MAC","FJI","IND","IDN","IRN","KAZ","KGZ","MYS","FSM","MNG","MMR","NRU","NPL","PAK","PLW","PNG","PHL","WSM","SGP","SLB","LKA","TJK","THA","TLS","TKM","UZB","VUT","VNM","BHR","EGY","ISR","JOR","KWT","LBN","OMN","QAT","SAU","PSE","ARE","YEM"];
+var Australia=["NZL","AUS"];
+
+var div = d3.select("body").append("div")	
+       .attr("class", "tooltip")				
+       .style("opacity", 0);
+
+var divtitle = d3.select("body").append("div")	
+       .attr("class", "title1");
+// Add title
+divtitle.html("Demographie des refugiés dans le monde");
+  
+var color_on_click;
+
+var original_x_befor_click, original_y_befor_click, original_width_befor_click, original_height_befor_click, continent_onclick;
+
+draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv");
+  
+function draw_all(dataLink){
+// read json data
+d3.csv(dataLink, function(data_csv) {
+   
+var nested_data = d3.nest()
+	.key(function(d) { return d.Country_of_Resettlement_ISO; })
+	.key(function(d) { return d.Year; })
+	.entries(data_csv);
+ //console.log(nested_data);
+  
+var nestedJSON = '{"name":"root","children":[{"continent":"Europe","children":';
+
+var filtred_data_by_europe = nested_data.filter(function(d){  				
+  				return Europe.indexOf(d.key)!=-1;  				
+});
+nestedJSON += JSON.stringify(filtred_data_by_europe)+'},';
+
+nestedJSON += '{"continent":"Amerique","children":';
+var filtred_data_by_America = nested_data.filter(function(d){  				
+  				return America.indexOf(d.key)!=-1;  				
+});
+nestedJSON += JSON.stringify(filtred_data_by_America)+'},'; 
+
+nestedJSON += '{"continent":"Asie","children":';
+var filtred_data_by_Asia = nested_data.filter(function(d){  				
+  				return Asia.indexOf(d.key)!=-1;  				
+});
+nestedJSON += JSON.stringify(filtred_data_by_Asia)+'},';
+  
+nestedJSON += '{"continent":"Afrique","children":';
+var filtred_data_by_Afrique = nested_data.filter(function(d){  				
+  				return Africa.indexOf(d.key)!=-1;  				
+});
+nestedJSON += JSON.stringify(filtred_data_by_Afrique)+'},';
+
+nestedJSON += '{"continent":"Australie","children":';
+var filtred_data_by_Australia = nested_data.filter(function(d){  				
+  				return Australia.indexOf(d.key)!=-1;  				
+});
+nestedJSON += JSON.stringify(filtred_data_by_Australia)+'}]}';
+
+var data = JSON.parse(nestedJSON);
+  
+  // Give the data to this cluster layout:
+  var root = d3.hierarchy(data).sum(function(d){
+    var total_country =0;
+    if(d.values){                                            
+    d.values.forEach(function(v){
+      v.values.forEach(function(e){
+        total_country+=parseInt(e.Grand_Total);})
+    });}
+    return total_country}); // Here the size of each leave is given in the 'value' field in input data
+
+//console.log(data);
+//console.log(root);
+//console.log(root.leaves());
+
+  // Then d3.treemap computes the position of each element of the hierarchy
+  d3.treemap()
+    .size([width, height])
+    .paddingTop(28)
+    .paddingRight(7)
+    .paddingInner(3)      // Padding between each rectangle
+    //.paddingOuter(6)
+    //.padding(20)
+    (root)
+d3.selectAll("rect").remove();
+  // prepare a color scale
+  var color = d3.scaleOrdinal()
+    .domain(["Europe", "Amerique", "Asie","Australie","Afrique"])
+    .range([ "#5659fe", "#ff4a47", "#12b700","#cfd20d", "#e137c2"])
+
+   // use this information to add rectangles:
+  svg
+    .selectAll("rect")
+    .data(root.leaves())
+    .enter()  	
+    .append("rect")
+      .attr("id",function(d){return d.data.key;})
+      .attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .style("stroke", "black")
+      .style("fill", function(d){
+    			return color(d.parent.data.continent);} )
+      .style("opacity", 1)
+      .on("mouseover", function(d){div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("Continent : "+d.parent.data.continent+ "<br/>Pays: "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> cliquez pour plus de détails")	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");})					
+      .on("mouseout", function(){div.style("opacity", 0);})
+      .on("click",function(d){	
+        div.style("opacity", 0);
+        continent_onclick = d.data.key;
+        original_x_befor_click = d.x0 ;
+        original_y_befor_click = d.y0;
+        original_width_befor_click = d.x1 - d.x0 ;
+        original_height_befor_click= d.y1 - d.y0;
+        color_on_click = color(d.parent.data.continent);
+        
+        d3.selectAll("rect").filter(function(e){
+            return d==e
+              }).transition()		
+                .duration(1000)
+            .attr('x', 0)
+          .attr('y', 30)
+          .attr('width', width)
+          .attr('height', height)
+
+        d3.selectAll("rect").filter(function(e){
+                return d!=e
+              }).transition()		
+                .duration(1000).style("opacity", 0);
+    
+        d3.selectAll("text").remove();
+   			d3.selectAll("titles").remove();
+    		d3.selectAll("vals").remove();
+         
+    		divtitle.html("Demographie des refugiés dans "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")");
+    
+    setTimeout(function(){draw_by_gender(dataLink,d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")",d.data, d.data.key, color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click)},900);
+      });
+
+  // and to add the text labels
+  svg
+    .selectAll("text")
+    .data(root.leaves().filter(function(d){return d.value>=230;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+10})    // +20 to adjust position (lower)
+      .text(function(d){ return d.data.key })
+      .attr("font-size", "10px")
+      .attr("fill", "white")
+
+  // and to add the text labels
+  svg
+    .selectAll("vals")
+    .data(root.leaves().filter(function(d){return d.value>=500;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
+      .text(function(d){ return d.value })
+      .attr("font-size", "11px")
+      .attr("fill", "white")
+
+  // Add title for the 3 groups
+  svg
+    .selectAll("titles")
+    .data(root.descendants().filter(function(d){return d.depth==1})
+              .filter(function(d){return d.value>0;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0})
+      .attr("y", function(d){ return d.y0+21})
+      .text(function(d){ return d.data.continent + ": "+d.value; })
+      .attr("font-size", "19px")
+      .attr("fill",  function(d){return color(d.data.continent)} )
+
+ function create_rectTitle(data_link,continent_onclick,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click){
+	svg.append("rect")
+    	.attr("x",0)
+    	.attr("y",0)
+    	.attr("width",width)
+    	.attr("height",50)
+    	.attr("opacity",0)
+    	.attr("id","recttitle1")
+    	.attr("fill","transparent")
+    	.attr("background-color","transparent")
+      .on("mouseover",  function(d){div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("retournez au page d'accueil")	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");}	)					
+      .on("mouseout", function(){div.style("opacity", 0);})
+      .on("click",function(d){
+        
+      	  divtitle.html("Demographie des refugiés dans le monde"); 
+         
+      
+          d3.select("#recttitle1").attr("opacity",0)
+          
+          d3.selectAll("text").remove();
+   				d3.selectAll("titles").remove();
+    			d3.selectAll("vals").remove();
+          
+    	    
+          d3.selectAll("rect")
+            .transition()		
+            .duration(1000)
+            .attr('x', original_x_befor_click)
+            .attr('y', original_y_befor_click )
+            .attr('width', original_width_befor_click)
+            .attr('height', original_height_befor_click)
+          	.attr("opacity",0);
+         setTimeout(function(){draw_all(data_link)},900);
+        })
+}
+	
+
+ function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click){
+   
+  var Female_0_17=0;var Female_18_59=0;var Female_60_plus=0;var Female_Total=0;var Female_unknown_age=0;
+ var male_0_17=0;var male_18_59=0;var male_60_plus=0;var male_Total=0;var male_unknown_age=0;
+ 	var nestedJSONdataofcountry = '{"name":"'+dataofcountry.key+'","children":[{"name":"Female","children":[';
+   dataofcountry.values.forEach(function(d){
+     d.values.forEach(function(e){
+       Female_0_17 += parseInt(e.Female_0_17);
+       Female_18_59 += parseInt(e.Female_18_59);
+       Female_60_plus += parseInt(e.Female_60_plus);
+       Female_unknown_age += parseInt(e.Female_unknown_age);
+       male_0_17 += parseInt(e.Male_0_17);
+       male_18_59 += parseInt(e.Male_18_59);
+       male_60_plus += parseInt(e.Male_60_plus);
+       male_unknown_age += parseInt(e.Male_unknown_age);
+     })
+   })
+   
+   nestedJSONdataofcountry +='{"name":"Female_0_17","value":"'+Female_0_17+'"},'+
+ '{"name":"Female_18_59","value":"'+Female_18_59+'"},'+
+'{"name":"Female_60_plus","value":"'+Female_60_plus+'"},'+
+ '{"name":"Female_unknown_age","value":"'+Female_unknown_age+'"}]'+
+ ',"value":"'+Female_Total+'"},{"name":"male","children":['+
+ '{"name":"male_0_17","value":"'+male_0_17+'"},'+
+ '{"name":"male_18_59","value":"'+male_18_59+'"},'+
+'{"name":"male_60_plus","value":"'+male_60_plus+'"},'+
+ '{"name":"male_unknown_age","value":"'+male_unknown_age+'"}]'+
+ ',"value":"'+male_Total+'"}]}'
+   
+ var stractueddataofcountry = JSON.parse(nestedJSONdataofcountry); 
+  //console.log(stractueddataofcountry);
+   var root1 = d3.hierarchy(stractueddataofcountry).sum(function(d){return d.value;});
+d3.treemap()
+    .size([width, height])
+    .paddingTop(28)
+    .paddingRight(7)
+    .paddingInner(3)      // Padding between each rectangle
+    //.paddingOuter(6)
+    //.padding(20)
+    (root1)
+
+  // prepare a color scale
+  var colorGender = d3.scaleOrdinal()
+    .domain(["male", "Female"])
+    .range([ "#de0256", "#ff7d32"]);
+	//console.log(root1.leaves())
+  // use this information to add rectangles:
+   
+   
+   d3.selectAll("rect").remove();   
+   
+   
+   svg.append("rect")
+      .attr("id", keyofcountry)
+      .attr('x', 0)
+      .attr('y', 30)
+      .attr('width', width)
+      .attr('height', height-20)
+      .style("stroke", "black")
+      .attr("opacity",1)
+      .attr("fill",color_on_click);
+   
+   svg.selectAll("rect")
+    .data(root1.leaves())
+    .enter()  
+    .append("rect")
+      .attr("id",function(d){return d.data.name;})
+      .attr('x', function (d) {return d.x0+5; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .style("fill", function(d){
+    			return colorGender(d.parent.data.name);} )
+      .style("opacity", 1)
+      .style("stroke", "white")
+      .on("mouseover", function(d){	
+     					div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("Pays: "+countryName+"</br>catégorie : "+d.data.name+"<br/>valeur : "+d.value+"</br>cliquez pour plus de détails")	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", ( d3.event.pageY - 28) + "px");
+           })					
+      .on("mouseout", function(){div.style("opacity", 0);})
+      .on("click",function(d){
+     	
+      });
+   
+   svg.append("rect")
+      .attr("id",root1.leaves()[0].data.name)
+      .attr('x', root1.leaves()[0].x0+5)
+      .attr('y', root1.leaves()[0].y0)
+      .attr('width', root1.leaves()[0].x1 - root1.leaves()[0].x0)
+      .attr('height', root1.leaves()[0].y1 - root1.leaves()[0].y0)
+      .style("fill", function(d){
+    			return colorGender(root1.leaves()[0].parent.data.name);} )
+      .style("opacity", 1)
+      .style("stroke", "white")
+      .on("mouseover",function(d){	
+     					div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("Pays: "+countryName+"</br>catégorie : "+root1.leaves()[0].data.name+"<br/>valeur : "+root1.leaves()[0].value+"</br>cliquez pour plus de détails")	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", ( d3.event.pageY - 28) + "px");
+   			})					
+      .on("mouseout", function(){div.style("opacity", 0);})
+      .on("click",function(d){     	
+      });
+   
+create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click);
+   d3.selectAll("text").remove();
+   d3.selectAll("titles").remove();
+    d3.selectAll("vals").remove();
+  // and to add the text labels
+  svg
+    .selectAll("text")
+    .data(root1.leaves().filter(function(d){return d.value>=1;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){return d.x0+10})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+15})    // +20 to adjust position (lower)
+      .text(function(d){ return d.data.name })
+      .attr("font-size", "15px")
+      .attr("fill", "white")
+
+  // and to add the text labels
+  svg
+    .selectAll("vals")
+    .data(root1.leaves().filter(function(d){return d.value>=1;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
+      .attr("y", function(d){ return d.y0+30})    // +20 to adjust position (lower)
+      .text(function(d){ return d.value })
+      .attr("font-size", "15px")
+      .attr("fill", "white")
+
+  // Add title for the 3 groups
+  svg
+    .selectAll("titles")
+    .data(root1.descendants().filter(function(d){return d.depth==1})
+              .filter(function(d){return d.value>0;}))
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0})
+      .attr("y", function(d){ return d.y0+21})
+      .text(function(d){ return d.data.name + ": "+d.value; })
+      .attr("font-size", "20px")
+      .attr("font-weight", "bold")
+      .attr("fill",  function(d){return colorGender(d.data.name)} )
+  }
+})}
+
+    		
+                    
+ 
+</script>
+</body>
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    body { margin:0;top:0;right:0;bottom:0;left:0; }
+    div.tooltip {	
+    position: absolute;			
+    text-align: center;	
+    color: black;
+    padding: 10px;				
+    font: 12px sans-serif;		
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+    }
+    div.pieChart{
+      top : 20 ;
+      left:20;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script>
+    var margin = {top: 20, right: 20, bottom: 30, left: 40};
+
+	var width =900 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
+
+
+    var container= d3.select("body").append("div").attr("class", "container-fluid").append("div")
+        .attr("class","row")
+   
+
+
+    var div = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
+        
+    var svg = container.append("svg")
+        .attr("class","col-sm-7")
+        .attr("width", width +margin.left +margin.right)
+        .attr("height", height +margin.top + margin.bottom)
+    
+     var container2 = container.append("div")
+        .attr("class","col-sm-5 order-last")
+
+    // svg.call(d3.zoom().on("zoom", function () {
+    //    svg.attr("transform", d3.event.transform)
+    // }))
+        
+    var svg2 = container2.append("svg")        
+        .attr("width",500)
+        .attr("hieght",300)
+        
+
+        
+    
+    var genders=["Adult - Male","Adult - Female","Child - Male","Child - Female","Total"];
+    
+    var color= d3.scaleOrdinal(d3.schemeCategory10 ).domain(genders)
+
+    svg.selectAll("rect").data(genders.slice(0,4)).enter().append("rect")
+        .attr("fill",function(d,i){return color(d)})
+        .attr("x",function(d,i){return margin.left})
+        .attr("y",function(d,i){return (margin.top+i*25)})
+        .attr("width",25)
+        .attr("height",25)
+
+    svg.selectAll("text").data(genders.slice(0,4)).enter().append("text")
+        .attr("fill",function(d,i){return color(d)})
+        .attr("x",function(d,i){return margin.left+30})
+        .attr("y",function(d,i){return (margin.top+i*25+12)})
+        .text(function(d,i){ return d})
+        
+
+    
+    
+  var pie = d3.pie() 
+    .value(function(d) {return d.value; })
+
+  var projection = d3.geoConicConformal().center([38,35])
+  
+  
+    var centroids;
+    var ProvinceNest;
+    var max
+    var min 
+	d3.json("https://raw.githubusercontent.com/lylla318/Syria_Story/master/data/syria-districts-topojson.json", function(error, json) {
+
+        projection.scale(5000)
+
+        var path = d3.geoPath() // d3.geo.pa,th avec d3 version 3
+        .projection(projection);
+
+        var bounds=path.bounds(topojson.feature(json, json.objects.SYR_adm2));
+        json = topojson.feature(json, json.objects.SYR_adm2)
+
+        d3.csv("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/VDC_Syria_CASREP.csv",
+          function(error, data){
+
+
+        
+            provinceNest = d3.nest()
+                .key(function(d){
+                    return d.province;
+                })
+                .rollup(function(k){
+                    //  console.log(k)
+                    var localdata={}
+                    localdata["Adult - Male"] = 0;
+                    localdata["Adult - Female"] =0 ;
+                    localdata["Child - Female"] =0 ;
+                    localdata["Child - Male"] =0 ;
+                    k.forEach(function (d){
+                    localdata[d.gender]+=1;
+                    })
+                    localdata["Total"] = "str"+k.length;
+                    // console.log(localdata)
+                    return localdata;
+                }).entries(data)
+                            
+
+            // console.log(provinceNest);
+            
+            centroids_center= d3.nest().key(function(d){return d.properties.NAME_1})
+            .rollup(function(k){
+                var mean_x = 0;
+                var mean_y =0;
+                k.forEach(function(d){
+                    // console.log(d)
+                    mean_x += path.centroid(d)[0];
+                    mean_y+= path.centroid(d)[1];
+                })
+                mean_x =mean_x/ k.length;
+                mean_y =mean_y/ k.length;
+               return ({"x":mean_x,"y":mean_y});
+            })
+            .entries(json.features)
+            // console.log(centroids_center)
+
+            max =0;
+            min =1E9;
+            provinceNest.forEach(function(k,i){
+                if (max<=parseInt(k.value["Total"].substr(3),10)){
+                        max = parseInt(k.value["Total"].substr(3),10);
+                    }
+                    if (min>=parseInt(k.value["Total"].substr(3),10)){
+                        min = parseInt(k.value["Total"].substr(3),10);
+                    }
+            })
+            // console.log(max);
+            var opacity = d3.scaleLinear().range([5,10]).domain([min,max])
+            var radius = d3.scaleLinear().range([10,50]).domain([min,max])
+
+
+            json.features.forEach(function(feature){
+                provinceNest.forEach(function(province){
+                    
+                    if(feature.properties.NAME_1==province.key){
+                        feature.properties["infos"] = province.value;
+                        for (var k of centroids_center){
+                            if (k.key==feature.properties.NAME_1){
+                                feature.properties.infos["x"] = "x"+k.value.x;
+                                feature.properties.infos["y"] = "y"+k.value.y;
+                            }
+                            
+                        }
+                        
+
+                    }
+                })
+                // console.log(feature)
+            })
+        
+
+            var g= svg.append("g");
+            // console.log(json.features)
+            json.features.forEach(function(feature){
+
+                var current = g.selectAll("g")
+                .data(json.features)
+                .enter()
+                .append("g")
+
+
+                geo_path=current.append("path")
+                .attr("d", path)
+                .attr("fill","orange")
+                .attr("opacity",function(feat){
+                    // console.log(parseInt(feat.properties.infos.Total.substr(3),10));
+                    return opacity(parseInt(feat.properties.infos.Total.substr(3),10))/10})
+                .attr("transform","translate(0,30)")
+                
+
+
+                var pie = d3.pie().value(function(d){return d.value});
+                  //console.log(d3.entries(listprovinces))
+                var data_ready = pie(d3.entries(feature.properties.infos))
+                // console.log(data_ready)
+                data_ready.forEach(function(dat){
+                    dat.data["x"]=feature.properties.infos.x;
+                    dat.data["y"]=feature.properties.infos.y
+                    dat.data["Total"]=feature.properties.infos.Total
+                    dat.data["name"]=feature.properties.NAME_1;
+                });
+
+
+                var pie_path = current.data(data_ready)
+                    .enter()
+                    .append('path')
+                    .attr('d', d3.arc()
+                      .innerRadius(0)
+                      .outerRadius(function(d){
+                        // console.log(d)
+                        return(radius(parseInt(d.data.Total.substr(3),10)))
+                      })
+                    
+                    )
+                  .attr("class","circles")
+                  .attr('fill', function(d){ 
+                    return(color(d.data.key)) 
+                  })
+                  .attr("stroke", "white")
+                  .attr("transform", function(d) {
+                    //   console.log(d)
+                      return "translate("+parseInt(d.data.x.substr(1))+","+parseInt(d.data.y.substr(1))+")"
+                  })
+                  geo_path.on("click",function(e){
+                    svg2.html("");
+                     
+                     var data_show = pie(d3.entries(e.properties.infos))
+                    // console.log(data_ready)
+                    console.log(data_show)
+                        data_show.forEach(function(dat){
+                    dat.data["x"]=e.properties.infos.x;
+                    dat.data["y"]=e.properties.infos.y
+                    dat.data["Total"]=e.properties.infos.Total
+                    dat.data["name"]=e.properties.NAME_1;
+                });
+                     svg2.selectAll("path").data(data_show).enter()
+                        .append('path')
+                        .attr('d', d3.arc()
+                        .innerRadius(0)
+                        .outerRadius(50))
+                    .attr("class","circles")
+                    .attr('fill', function(d){ 
+                        return(color(d.data.key)) 
+                    })
+                    .attr("stroke", "white")
+                    .attr("transform","translate("+(margin.left+50)+","+(margin.top+75)+")")
+                    
+                    svg2.append("text")
+                            .text("Distribution des morts dans la région: "+e.properties.NAME_1)
+                            .attr("x",margin.left+110)
+                            .attr("y", margin.top)
+
+                    var keys = Object.keys(e.properties.infos);
+                    console.log(keys)
+                    var index =1;
+                    for (let key of keys){
+                        if (genders.includes(key)){
+                            svg2.append("text")
+                            .text(
+                                function(){
+                                    if (key!="Total") {return key+" : " + e.properties.infos[key];}
+                                    else {return key+" : " + e.properties.infos[key].substr(3)}
+                                }
+                            )
+                            .attr("fill",color(key))
+                            .attr("x",margin.left+110)
+                            .attr("y", margin.top+index*25)
+                            index++;
+                        }
+                    
+                    }
+                    
+                  })
+
+                geo_path.on("mouseover",function(e){
+                    svg.selectAll("path").filter(function(d){
+                        return d==e
+                    }).attr("fill","yellow")
+                    div.transition()		
+                    .duration(200)		
+                    .style("opacity", .9)
+                    .style("background","white")
+                    div.html( "Region: "+ e.properties.NAME_1)	
+                    .style("left", (d3.event.pageX) + "px")		
+                    .style("top", (d3.event.pageY - 28) + "px");
+                    
+                    
+                }).on("mouseout",function(e){
+                    svg.selectAll("path").filter(function(d){
+                        return d==e
+                    }).attr("fill","orange")
+                    div.transition()		
+                    .duration(200)		
+                    .style("opacity", 0)
+                })              
+                
+                  
+        })
+            
+
+
+
+             
+        })
+        
+
+    
+    })
+</script>

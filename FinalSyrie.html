@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<style>
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;	
+    color: black;
+    font-size: 18px;
+    padding: 10px;				
+    font: 12px sans-serif;		
+    border: 0px;		
+    border-radius: 8px;			
+      pointer-events: none;}
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
+var margin = {top: 20, right: 30, bottom: 30, left: 40},
+    width = 960/1.5 - margin.left - margin.right,
+    height = 500/2 - margin.top - margin.bottom;
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0])
+		.nice();
+
+var x = d3.scaleBand()
+    .rangeRound([0, width])
+    .paddingInner(0.05)
+    .align(0.1)
+    
+var z = d3.scaleOrdinal(d3.schemeCategory20)
+  
+var symbols = []
+  
+    // Load stocks data
+  // Ex: 0: {symbol: "MSFT", date: "Jan 2000", price: "39.81"}
+  d3.csv('https://raw.githubusercontent.com/IMrabet/Data_Visualisation/master/VDC_Syria_CASREP.csv', function(error, raw) {
+    raw.forEach(function(d, i) {
+      if(symbols.indexOf(d.gender) < 0) {
+        symbols.push(d.gender)
+      }
+      d.deathdate = new Date(d.deathdate)
+    });
+    // On lie en fonction de la date
+        var yearnest = d3.nest()
+   	.key(function(d){
+      				return d.deathdate.getFullYear();
+    			})
+    	.key(function(d) { return d.gender; })
+    	.rollup(function(v) {return v.length })
+       .entries(raw);
+    
+    //console.log(raw);
+    var listGender = [];
+    var listProvinces = []
+    
+        yearnest.sort(function(a, b) {
+        console.log(a.values)
+        a.values.sort(function(d,e){
+            return e.value-d.value
+        })
+    });
+  
+    var years = yearnest.map(function(d) { return d.key; }).sort()
+    //console.log(years)
+    
+    
+     //Visualisations
+    //console.log(yearnest)
+    //console.log(symbols)
+    //console.log(years) 
+
+    // d3-stack format https://github.com/d3/d3-shape/blob/master/README.md#stack_keys
+    // {MSFT: 356.07999999999987, AMZN: 527.17, IBM: 1162.97, AAPL: 260.98}
+    var data_stack = []
+      
+    yearnest.forEach(function(d, i) {
+      d.values = d.values.map(function(e) { return e.value; })
+      var t ={}
+      symbols.forEach(function(e, i) { 
+        t[e] = d.values[i]
+      })
+      t.year = d.key;
+      data_stack.push(t)
+    })
+    
+    //console.log(data_stack)
+     
+    var layers = d3.stack().keys(symbols)(data_stack);
+
+    var max = d3.max(layers[layers.length-1], function(d) { return d[1]; });
+    
+    y.domain([0, max]);
+    x.domain(years);
+    
+    console.log(symbols)  
+    var a
+    var svg = d3.select("div").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    svg.append("g").selectAll("g")
+          .data(layers)
+      .enter().append("g")
+        .style("fill", function(d) { return z(d.key); })	
+        .selectAll("rect")
+      .data(function(d) {  return d; })
+        .enter().append("rect")
+          .attr("x", function(d, i) { return x(d.data.year); })
+          .attr("y", function(d) { return y(d[1]); })
+          .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+          .attr("width", x.bandwidth())
+       .on("click",function(e,i){
+      var domaine = []
+      var année = 2019 - i;
+      raw.forEach(function(a, k) {
+      if(a.deathdate.getFullYear() == année) {
+        domaine.push(a)
+      }
+    });
+      console.log(domaine)
+      //gerer le sexe
+      var name = [];
+            for (let step = e[0]; step < e[1]; step++){
+                name.push("Nom:  "+ domaine[step].name + "\t\tProvince:  " + domaine[step].province +"\t\tBirthDate:  " + domaine[step].deathdate.toDateString() +"\n")
+              }
+            var myp = document.getElementById("myp")
+            myp.innerHTML = name
+      		//b.innerHTML="Texte";
+      
+        })
+        .on("mouseover", function(d,i){
+        d3.select(this).style("opacity",.3)
+        var div = d3.select("body").append("div")	
+       .attr("class", "tooltip")				
+       .style("opacity", 0);
+       div.transition()		
+                  .duration(200)		
+                  .style("opacity", .8)
+              		.style("background","white")
+              div.html("value:"+(d[1]-d[0]))	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");
+        a = div 	
+
+            })
+    .on("mouseout", function(d,i){
+      d3.selectAll("rect").style("opacity", 1)
+			 a.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+    })
+    
+    svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x))
+    
+    svg.append("g")
+      .attr("class", "y axis")
+      .attr("transform", "translate(" + (0) + ", 0)")
+      .call(d3.axisLeft().scale(y))
+      
+    //Legende 
+        svg.selectAll(".rect").data(symbols).enter()
+    	.append("rect")
+      .attr("x",700/2)
+      .attr("y",function(d,i){
+          return 60*i/2;
+        })
+      .attr("height", 50/2)
+    	.attr("width", 50/2)
+			.style("fill",function(d,i){
+          return z(d)
+        })
+       svg.selectAll(".text").data(symbols).enter()
+        .append("text").attr("x", 750/2)
+          .attr("y",function(d,i){
+          return ((60*i)+30)/2;
+        })
+         .text(function(d,i){
+         return d;
+       })
+          .style("fill",function(d,i){
+          return z(d)
+        })
+    })
+  
+</script>
+  <script>
+  
+  // Set some margins
+  // Set some margins
+	var margin = {top: 20, right: 20, bottom: 20, left: 50};
+  
+	var width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+  
+  // Create the SVG
+  var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+   .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // Scales  
+  var y = d3.scaleLinear()
+  	.range([height, 0]);
+  
+  var t = d3.scaleTime()
+  	.range([0, width]);
+
+  // Date format https://bl.ocks.org/zanarmstrong/ca0adb7e426c12c06a95
+  var parseTime  = d3.timeParse("%b %Y")
+  
+  var color = d3.scaleOrdinal(d3.schemeCategory20) 
+  var symbols2 = []
+    var data_stack = []
+    var data = []
+    var a = []
+  d3.csv('https://raw.githubusercontent.com/IMrabet/Data_Visualisation/master/VDC_Syria_CASREP.csv', function(error, raw) {
+     
+    
+    //on modifie les données
+     
+    raw.forEach(function(d, i) {
+      var t ={}
+      t.date = new Date(d.deathdate);
+      t.name = d.name;
+      t.gender = d.gender;
+      a.push(t)
+    })
+       //Trier les données
+    
+      a.sort(function(a, b) {
+        c = (new Date(a.date)).getFullYear()
+        d = (new Date(b.date)).getFullYear()
+          if(c==d){
+            e = (new Date(a.date)).getMonth()
+            f = (new Date(b.date)).getMonth()
+            return e - f;
+          }
+          if(c!=d){
+          return c - d; 
+          }
+  });
+     //console.log(a)
+    
+    //on modifie les données
+            var raw = d3.nest()
+   	.key(function(d){
+      				return d.gender  +"-"+ d.date.getFullYear()+"-"+ (d.date.getMonth()+1);
+    			})
+    	.rollup(function(v) {return v.length })
+       .entries(a);
+    console.log(raw)
+    
+    //console.log(raw)
+    
+    raw.forEach(function(d, i) {
+      var t ={}
+      t.date = new Date(d.key.split("-",3)[2]+ "-" +d.key.split("-",4)[3]);
+      t.type = d.key.split("-",3)[0]+ "-"+d.key.split("-",3)[1];
+      t.value = d.value;
+      data_stack.push(t)
+    })
+    var listGender = [];
+        data_stack.forEach(function(d, i) {
+      if(symbols2.indexOf(d.type) < 0) {
+        symbols2.push(d.type)
+        data[symbols2.indexOf(d.type)] = [];
+      }
+      data[symbols2.indexOf(d.type)].push(d);
+    });
+        
+    console.log(data_stack) 
+  
+ 
+        // Calculated on the flat dataset
+    t.domain(d3.extent(data_stack, function(d) {
+      return d.date;
+    }))
+    
+    y.domain([0, d3.max(data_stack, function(d) {
+      return d.value;
+    })])
+    
+    // We update the x-scale using the Temporal scale t
+    var xAxis = d3.axisBottom()
+    	.scale(t);
+
+    var yAxis = d3.axisLeft()
+    	.scale(y);
+    
+    // Line generator
+    var line = d3.line()//.curve(d3.curveCardinal)
+      .x(function(d) { return t(d.date); }) // Update X mapping
+      .y(function(d) { return y(d.value); }) // Update Y mapping
+//console.log(data)
+    svg.selectAll(".line").data(data).enter()
+      .append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d); })  
+      .attr("stroke", function(d, i) { return color(i); })
+      .attr("fill", "none");
+    
+    svg.append('g')
+      .attr('transform', 'translate(0,' + height + ')')
+      .attr('class', 'x axis')
+      .call(xAxis);
+
+    svg.append('g')
+      .attr('transform', 'translate(0,' + 0 + ')')
+      .attr('class', 'y axis')
+      .call(yAxis);
+      
+      //Legende 
+      svg.selectAll(".rect").data(symbols).enter()
+    	.append("rect")
+      .attr("x",350)
+      .attr("y",function(d,i){
+          return 60 * i/2
+        })
+      .attr("height", 50/2)
+    	.attr("width", 50/2)
+			.style("fill",function(d,i){
+          return color(i)
+        })
+       svg.selectAll(".text").data(symbols).enter()
+        .append("text").attr("x", 375)
+          .attr("y",function(d,i){
+          return ((60*i)+30)/2;
+        })
+         .text(function(d,i){
+         return d;
+       })
+          .style("fill",function(d,i){
+          return color(i)
+        })
+        data.forEach(function(d){  
+    svg.selectAll("dot")	
+        .data(d)			
+    .enter().append("circle")								
+        .attr("r", 2)		
+        .attr("cx", function(a) { 
+        //console.log(a)  
+        return t(a.date); })		 
+        .attr("cy", function(a) { return y(a.value); })		
+      	.style("fill", "black")
+    		.style("opacity",0)
+        .on("mouseover", function(d) {
+      	d3.select(this).style("r", 5);
+              var div = d3.select("body").append("div")	
+              .attr("class", "tooltip")				
+             .style("opacity", 0)
+
+            div.transition()		
+                .duration(100)		
+                .style("opacity", 12)
+                .style("background","gray")	
+            div.html("value: " + d.value)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");
+              a = div 	
+
+            })					
+        .on("mouseout", function(d) {	 
+      d3.selectAll("circle").style("r", 5);
+      d3.selectAll("rect").style("opacity", 1)	
+            a.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        })
+})
+
+  });
+  
+ </script>
+<div ></div>
+<div align="center">
+  <p>Ca doit etre ici</p>
+  <textarea cols="150" rows="10" id = myp></textarea>
+</div>
+</body>

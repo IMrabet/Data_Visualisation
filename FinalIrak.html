@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+<style>
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;	
+    color: black;
+    font-size: 18px;
+    padding: 10px;				
+    font: 12px sans-serif;		
+    border: 0px;		
+    border-radius: 8px;			
+      pointer-events: none;}
+
+
+ </style>
+</head>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+
+var margin = {top: 20, right: 30, bottom: 30, left: 100},
+    width = 960/1.5 - margin.left - margin.right,
+    height = 500/2 - margin.top - margin.bottom;
+
+    var x = d3.scaleBand()
+          .range([0, width])
+          .padding(0.1);
+var y = d3.scaleLinear()
+          .range([height, 0]);
+    
+var parseTime  = d3.timeParse("%b %Y")
+  
+  var color = d3.scaleOrdinal(d3.schemeCategory20) 
+  var symbols = []
+    var data_stack2 = []
+    var final = []
+    var data2 = []
+    // Load stocks data
+  // Ex: 0: {symbol: "MSFT", date: "Jan 2000", price: "39.81"}
+  d3.csv('https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/ibc-incidents-2020-2-7.csv', function(error, raw2) {
+    raw2.forEach(function(d, i) {
+      var t ={}
+      t.date = new Date(d.StartDate).getFullYear() ;
+      data_stack2.push(t)
+    })
+
+    var data2 = d3.nest()
+   	.key(function(d){
+      				return d.date
+    			})
+    	.rollup(function(v) {return v.length })
+       .entries(data_stack2);
+    
+    data2.sort(function(a, b) {
+      c = (new Date(a.key)).getFullYear()
+      d = (new Date(b.key)).getFullYear()
+        if(c==d){
+          e = (new Date(a.key)).getMonth()
+          f = (new Date(b.key)).getMonth()
+          return e - f;
+        }
+        if(c!=d){
+        return c - d; 
+        }
+});
+    //console.log(years)
+    
+    x.domain(data2.map(function(d) { return d.key; }));
+  y.domain([0, d3.max(data2, function(d) { return d.value; })]);
+  var a
+		var svg = d3.select("body").append("div").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+   .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+     //Visualisations
+     svg.selectAll(".bar")
+      .data(data2)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.key); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d.value); })
+      .attr("height", function(d) { return height - y(d.value); })
+  		.style("fill","steelblue")
+
+      //a faire
+      .on("mouseover", function(d,i){
+        d3.select(this).style("opacity",.3)
+        var div = d3.select("body").append("div")	
+       .attr("class", "tooltip")				
+       .style("opacity", 0);
+       div.transition()		
+                  .duration(200)		
+                  .style("opacity", .8)
+              		.style("background","white")
+              div.html("value:"+(d.value))	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");
+        a = div 	
+
+            })
+    .on("mouseout", function(d,i){
+      d3.selectAll("rect").style("opacity", 1)
+			 a.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+    })
+
+
+  // add the x Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // add the y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  
+  
+  });
+  
+</script>
+  <script>
+  
+  // Set some margins
+  // Set some margins
+	var margin = {top: 20, right: 20, bottom: 20, left: 50};
+  
+	var width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+    var a
+
+  // Create the SVG
+  var svg = d3.select("body").append("div").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+   .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  // Scales  
+  var y = d3.scaleLinear()
+  	.range([height, 0]);
+  
+  var t = d3.scaleTime()
+  	.range([0, width]);
+
+  // Date format https://bl.ocks.org/zanarmstrong/ca0adb7e426c12c06a95
+  var parseTime  = d3.timeParse("%b %Y")
+  
+  var color = d3.scaleOrdinal(d3.schemeCategory20) 
+  var symbols2 = []
+    var data_stack = []
+    var final = []
+    var data = []
+    d3.csv('https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/ibc-incidents-2020-2-7.csv', function(error, raw) {
+     
+    
+    //on modifie les données
+     
+    raw.forEach(function(d, i) {
+      var t ={}
+      t.date = new Date(new Date(d.StartDate).getFullYear() + " " + (new Date(d.StartDate).getMonth()+1)) ;
+      data_stack.push(t)
+    })
+    var data = d3.nest()
+   	.key(function(d){
+      				return d.date
+    			})
+    	.rollup(function(v) {return v.length })
+       .entries(data_stack);
+    
+    data.forEach(function(d, i) {
+      var t ={}
+      t.date = new Date(new Date(d.key)) ;
+      t.value = d.value
+      final.push(t)
+    })
+        //Trier les données
+    
+        final.sort(function(a, b) {
+      c = (new Date(a.date)).getFullYear()
+      d = (new Date(b.date)).getFullYear()
+        if(c==d){
+          e = (new Date(a.date)).getMonth()
+          f = (new Date(b.date)).getMonth()
+          return e - f;
+        }
+        if(c!=d){
+        return c - d; 
+        }
+});
+
+ 
+        // Calculated on the flat dataset
+        x = d3.scaleTime()
+      .domain(d3.extent(final, function(d) { return d.date; }))
+      .range([ 0, width ]);
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+    
+      y = d3.scaleLinear()
+      .domain([0, d3.max(final, function(d) { return +d.value; })])
+      .range([ height, 0 ]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+    
+    // Add the line
+    svg.append("path")
+      .datum(final)
+      .attr("fill", "none")
+      .attr("stroke", "steelblue")
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.date) })
+        .y(function(d) { return y(d.value) })
+        )
+        svg.selectAll("dot")	
+        .data(final)			
+    .enter().append("circle")								
+        .attr("r", 5)		
+        .attr("cx", function(d) { return x(d.date); })		 
+        .attr("cy", function(d) { return y(d.value); })	
+        .style("opacity",0)	
+        .on("mouseover", function(d) {
+      	d3.select(this).style("r", 5);
+              var div = d3.select("body").append("div")	
+              .attr("class", "tooltip")				
+             .style("opacity", 0)
+
+            div.transition()		
+                .duration(100)		
+                .style("opacity", 10)
+                .style("background","gray")	
+            div.html("value: " + d.value)	
+                .style("left", (d3.event.pageX) + "px")		
+                .style("top", (d3.event.pageY - 28) + "px");
+              a = div 	
+
+            })					
+        .on("mouseout", function(d) {	
+      d3.selectAll("circle").style("r", 2);
+      d3.selectAll("rect").style("opacity", 1)	
+            a.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        })
+    .style("fill","steelblue")
+
+        
+
+  }); 
+
+  
+ </script>
+
+<div id="graphe"></div>
+<div id = "graphe2"></div>
+<p id = "b"></p>
+</body>
