@@ -467,7 +467,7 @@ if(valueSubjectname=="dep"){
 function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,data_csv,countryKey){
    
   var Female_0_17=0;var Female_18_59=0;var Female_60_plus=0;var Female_Total=0;var Female_unknown_age=0;
- var male_0_17=0;var male_18_59=0;var male_60_plus=0;var male_Total=0;var male_unknown_age=0;
+ var Male_0_17=0;var Male_18_59=0;var Male_60_plus=0;var Male_Total=0;var Male_unknown_age=0;
  	var nestedJSONdataofcountry = '{"name":"'+dataofcountry.key+'","children":[{"name":"Female","children":[';
    dataofcountry.values.forEach(function(d){
      d.values.forEach(function(e){
@@ -475,10 +475,10 @@ function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_o
        Female_18_59 += parseInt(e.Female_18_59);
        Female_60_plus += parseInt(e.Female_60_plus);
        Female_unknown_age += parseInt(e.Female_unknown_age);
-       male_0_17 += parseInt(e.Male_0_17);
-       male_18_59 += parseInt(e.Male_18_59);
-       male_60_plus += parseInt(e.Male_60_plus);
-       male_unknown_age += parseInt(e.Male_unknown_age);
+       Male_0_17 += parseInt(e.Male_0_17);
+       Male_18_59 += parseInt(e.Male_18_59);
+       Male_60_plus += parseInt(e.Male_60_plus);
+       Male_unknown_age += parseInt(e.Male_unknown_age);
      })
    })
    
@@ -486,13 +486,13 @@ function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_o
  '{"name":"Female_18_59","value":"'+Female_18_59+'"},'+
 '{"name":"Female_60_plus","value":"'+Female_60_plus+'"},'+
  '{"name":"Female_unknown_age","value":"'+Female_unknown_age+'"}]'+
- ',"value":"'+Female_Total+'"},{"name":"male","children":['+
- '{"name":"male_0_17","value":"'+male_0_17+'"},'+
- '{"name":"male_18_59","value":"'+male_18_59+'"},'+
-'{"name":"male_60_plus","value":"'+male_60_plus+'"},'+
- '{"name":"male_unknown_age","value":"'+male_unknown_age+'"}]'+
- ',"value":"'+male_Total+'"}]}'
-   var listattrubute = ["Female_0_17","Female_18_59","Female_60_plus","Female_unknown_age","male_0_17","male_18_59","male_60_plus","male_unknown_age"];
+ ',"value":"'+Female_Total+'"},{"name":"Male","children":['+
+ '{"name":"Male_0_17","value":"'+Male_0_17+'"},'+
+ '{"name":"Male_18_59","value":"'+Male_18_59+'"},'+
+'{"name":"Male_60_plus","value":"'+Male_60_plus+'"},'+
+ '{"name":"Male_unknown_age","value":"'+Male_unknown_age+'"}]'+
+ ',"value":"'+Male_Total+'"}]}'
+   var listattrubute = ["Female_0_17","Female_18_59","Female_60_plus","Female_unknown_age","Male_0_17","Male_18_59","Male_60_plus","Male_unknown_age"];
     
  var stractueddataofcountry = JSON.parse(nestedJSONdataofcountry); 
   //console.log(stractueddataofcountry);
@@ -508,7 +508,7 @@ d3.treemap()
 
   // prepare a color scale
   var colorGender = d3.scaleOrdinal()
-    .domain(["male", "Female"])
+    .domain(["Male", "Female"])
     .range(["#1f77b4", "#ff7f0e"]);
 	//console.log(root1.leaves())
   // use this information to add rectangles:
@@ -666,7 +666,7 @@ function display_courbe(data,country,listattrubute){
     
      
     var color= d3.scaleOrdinal()
-    .domain(["Female_0_17","Female_18_59","Female_60_plus","Female_unknown_age","male_0_17","male_18_59","male_60_plus","male_unknown_age","Total_departures_persons","Total_submissons_persons"])
+    .domain(["Female_0_17","Female_18_59","Female_60_plus","Female_unknown_age","Male_0_17","Male_18_59","Male_60_plus","Male_unknown_age","Total_departures_persons","Total_submissons_persons"])
     .range(["#ffbb78","#ff7f0e","#ff7f0e","grey","#aec7e8","#1f77b4","#1f77b4" , "grey","red","red"]);   
    	     
      
@@ -677,6 +677,7 @@ function display_courbe(data,country,listattrubute){
 
   function scatterplot(el,data,var_color,var_x,var_y, dim_width,dim_height,pos_x,pos_y){
         //console.log(data); 
+        //console.log(var_y+" : "+var_color);
   	var nested_data = d3.nest()      
           .key(function(d) {return d[var_x];})
           .rollup(function(d) {
