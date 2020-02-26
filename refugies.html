@@ -286,6 +286,7 @@ var data = JSON.parse(nestedJSON);
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
 	  var listattrubute =[champ]
+	  
 	  if(valueSubjectname=="dem"){
     		divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
 		}else if(valueSubjectname=="dep"){
