@@ -145,8 +145,6 @@ var Australia=["NZL","AUS"];
 var div = d3.select("body").append("div")	
        .attr("class", "tooltip")				
        .style("opacity", 0);
-
-
   
 var color_on_click;
 
@@ -459,9 +457,6 @@ var data = JSON.parse(nestedJSON);
 }
 
 
-
-
-
 function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,data_csv,countryKey){
    
   var Female_0_17=0;var Female_18_59=0;var Female_60_plus=0;var Female_Total=0;var Female_unknown_age=0;
@@ -636,7 +631,7 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
       .attr("fill",  function(d){return colorGender(d.data.name)} )
   }  
      
-  function display_courbe(data,country,listattrubute){   
+function display_courbe(data,country,listattrubute){   
      //console.log(data);
      //console.log(data);
 	 d3.selectAll("path").remove();
@@ -698,55 +693,50 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
       .x(function(d, i) { return x(parseDate(d.key.split(" ")[3]));})
       .y(function(d, i) { return  y(parseInt(d.value));})
 
-	var g= el.append("g")
-  		.attr("transform","translate("+pos_x+","+pos_y+")")
+	var g55 = el.append("g")
+  		.attr("transform","translate("+pos_x+","+pos_y+")");
       
-       g.selectAll("path")
+       g55.selectAll("path")
             .data([nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3]))])
-            .enter().append("path")
+            .enter()
+            .append("path")
             .style("fill","none")
      	    .style("stroke",var_color)
             .style("stroke-width",2)
      	    .attr("d", line)
-            .on('mouseover',function(d){console.log("ok");
+            .on("mouseover",function(d){
               d3.selectAll("path").filter(function(e){
-                return d==e
+                return d==e;
               }).style("stroke", "red")
-              	.style("stroke-width", 4)
+              	.style("stroke-width", 4);
             })
             .on("mouseout",function(d){
               d3.selectAll("path").filter(function(e){
-                return d==e
+                return d==e;
               }).style("stroke", var_color)
-              	.style("stroke-width", 2)              	
-            });
+              	.style("stroke-width", 2);             	
+            })
+            .on("click",function(d){ console.log("ok");});      
             
-            
-            
-            g.selectAll("circle")
+           g55.selectAll("circle")
             .data(nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3])))
-            .enter().append("circle")
+            .enter()
+            .append("circle")
             .attr("cx", function(d) { return x(parseDate(d.key.split(" ")[3])); })
             .attr("cy", function(d) { return y(parseInt(d.value)); })
             .attr("r",3)
             .attr("fill",var_color)
-            .on('mouseover',function(d){            
-              div.transition()		
-                  .duration(500)		
-                  .style("opacity", .8)
-              		.style("background","white");              
+            .on("mouseover",function(d){         
+              div.style("opacity", .8)
+              	  .style("background","white");              
               div.html("year : "+d.key.split(" ")[3]+"<br/> value : "+d.value)	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", ( d3.event.pageY - 28) + "px");                       				
             })
-            .on("mouseout",function(d){
-              d3.selectAll("circle").filter(function(e){                
-                return d==e;                
-              }).style("fill",function(e){
-                h.style("opacity",0);
-                return var_color;})           	
-            })
-   	
+            .on("mouseout",function(d){             
+                div.style("opacity",0);
+             })
+              .on("click",function(d){ console.log("ok");});
       
    		var xAxis = d3.axisBottom()
     				.scale(x);
@@ -754,16 +744,16 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
 		var yAxis = d3.axisLeft()
     				.scale(y);
 
-          g.append("g")
+          g55.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," +(dim_height-margin.top-margin.bottom)+ ")")
             .call(xAxis)
           
-          g.append("g")
+          g55.append("g")
             .attr("class", "y axis")
           	.attr("transform", "translate("+margin.left+",0 )")
             .call(yAxis)
-}
+	}
 
 }
 </script>
