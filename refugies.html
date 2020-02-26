@@ -135,7 +135,7 @@ var svg = d3.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")");
 
 
-
+var valueSubjectname;
 const America=["USA","URY","MEX","CAN","BRA","ARG","ATG","ABW","BHS","BLZ","BOL","VGB","CYM","CHL","COL","CRI","CUB","CUW","DOM","ECU","SLV","GRD","GTM","GUY","HTI","HND","JAM","MEX","NIC","PAN","PER","KNA","LCA","SUR","TTO","TCA","VEN"];
 const Europe =["ALB","AUT","BLR","BEL","BGR","HRV","CYP","CZE","DNK","EST","FIN","FRA","DEU","HUN","ISL","IRL","ITA","LVA","LIE","LTU","LUX","MLT","MCO","NLD","NOR","PRY","POL","PRT","ROU","SVK","SVN","ESP","SWE","CHE","GBR","ARM","AZE","BIH","GEO","MKD","MDA","RUS","SRB","TUR","UKR"];
 const Africa =["DZA","LBY","MRT","MAR","TUN"];
@@ -149,13 +149,13 @@ var div = d3.select("body").append("div")
 var color_on_click;
 
 var original_x_befor_click, original_y_befor_click, original_width_befor_click, original_height_befor_click, continent_onclick;
-divtitle.html("Demography of refugees in the world")
+
 draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
 
 $('input:radio').on('change', function(e){
   var name = e.currentTarget.name,
-  value = e.currentTarget.value;
- if(value=="dem"){
+ valueSubjectname = e.currentTarget.value;
+ if(valueSubjectname=="dem"){
 	divtitle.html("Demography of refugees in the world")
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
@@ -163,15 +163,15 @@ $('input:radio').on('change', function(e){
 	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
 
 	}
- else if(value=="dep"){
-	divtitle.html("Demography of refugees in the world")
+ else if(valueSubjectname=="dep"){
+	divtitle.html("Departures of refugees to all countries")
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
 	d3.select("#my_dataviz2Ev").remove();
 	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false);
 		}
  else{
-	divtitle.html("Demography of refugees in the world")
+	divtitle.html("subbmissions of refugees in all countries")
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
 	d3.select("#my_dataviz2Ev").remove();
@@ -286,8 +286,14 @@ var data = JSON.parse(nestedJSON);
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
 	  var listattrubute =[champ]
-	  divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")")
-		display_courbe(data_csv,d.data.values[0].values[0].Country_of_Resettlement_ISO,listattrubute);
+	  if(valueSubjectname=="dem"){
+    		divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
+		}else if(valueSubjectname=="dep"){
+    		divtitle.html("Departures of refugees to "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
+		}else{
+    		divtitle.html("subbmissions of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
+		}
+	  display_courbe(data_csv,d.data.values[0].values[0].Country_of_Resettlement_ISO,listattrubute);
 	  });
 	  rects.transition()  // Gives the fly out from the center effect
           .delay(function (d, i){
@@ -352,9 +358,9 @@ var data = JSON.parse(nestedJSON);
         d3.selectAll("text").remove();
    			d3.selectAll("titles").remove();
     		d3.selectAll("vals").remove();
-         
+                
     		divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")");
-    
+		
     setTimeout(function(){draw_by_gender(dataLink,d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")",d.data, d.data.key, color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,data_csv,d.data.key)},1000);
       }});
 	  
@@ -433,9 +439,11 @@ var data = JSON.parse(nestedJSON);
                   .style("top", (d3.event.pageY - 28) + "px");}	)					
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
-        
+          
       	  divtitle.html("Demography of refugees in the world"); 
-         
+         d3.selectAll("path").remove();
+         d3.selectAll("circle").remove();
+	 d3.select("#my_dataviz2Ev").remove();
       
           d3.select("#recttitle1").attr("opacity",0)
           
@@ -534,7 +542,7 @@ d3.treemap()
       .style("opacity", 1)
       .style("stroke", "white")
       .on("mouseover", function(d){	
-     					div.transition()		
+     		div.transition()		
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
