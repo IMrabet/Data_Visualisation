@@ -160,7 +160,7 @@ $('input:radio').on('change', function(e){
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
 	d3.select("#my_dataviz2Ev").remove();
-	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true,valueSubjectname);
 
 	}
  else if(valueSubjectname=="dep"){
@@ -168,20 +168,20 @@ $('input:radio').on('change', function(e){
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
 	d3.select("#my_dataviz2Ev").remove();
-	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false);
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false,valueSubjectname);
 		}
  else{
 	divtitle.html("subbmissions of refugees in all countries")
 	d3.selectAll("path").remove();
 	d3.selectAll("circle").remove();
 	d3.select("#my_dataviz2Ev").remove();
-	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQSubmissions_Americas.csv","Total_submissons_persons",false); 
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQSubmissions_Americas.csv","Total_submissons_persons",false,valueSubjectname); 
 	};
 });
 
 			
 	
-function draw_all(dataLink,champ,active_onClick){
+function draw_all(dataLink,champ,active_onClick,valueSubjectname){
 // read json data
 d3.csv(dataLink, function(data_csv) {
    
@@ -286,10 +286,8 @@ var data = JSON.parse(nestedJSON);
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
 	  var listattrubute =[champ]
-	  
-	  if(valueSubjectname=="dem"){
-    		divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
-		}else if(valueSubjectname=="dep"){
+	  //console.log(valueSubjectname);	  
+if(valueSubjectname=="dep"){
     		divtitle.html("Departures of refugees to "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
 		}else{
     		divtitle.html("Subbmissions of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")");
