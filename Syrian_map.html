@@ -89,8 +89,8 @@
   <label for="dem">Age and gender</label><br>
   <input type="radio" id="sujet2" name="sujet" value="actor">
   <label for="dep">Actor</label><br>
-  <input type="radio" id="sujet3" name="sujet" value="cause">
-  <label for="sub">Cause of death</label> 
+  <input type="radio" id="sujet3" name="sujet" value="deathcause">
+  <label for="sub">cause of death</label> 
   <script>
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
@@ -129,7 +129,7 @@
     
     var genders=["Adult - Male","Child - Male","Adult - Female","Child - Female","Total"];
     
-    var color= d3.scaleOrdinal(d3.schemeCategory20 ).domain(genders)
+    var color= d3.scaleOrdinal(d3.schemeCategory20.concat(d3.schemeTableau10) ).domain(genders)
 
    
 
@@ -208,6 +208,21 @@
                     .attr("y",function(d,i){return (20+i*25)})
                     .text(function(d,i){ return d})
                 }
+                if (data_nest=="deathcause"){
+                    dataNest= d3.nest().key(function(d){return d.deathcause}).entries(data).map(function(e){return e.key})
+                    svg.selectAll("rect").data(dataNest).enter().append("rect")
+                    .attr("fill",function(d,i){return color(d)})
+                    .attr("x",function(d,i){return 10})
+                    .attr("y",function(d,i){return (10+i*25)})
+                    .attr("width",10)
+                    .attr("height",10)
+
+                    svg.selectAll("text").data(dataNest).enter().append("text")
+                    .attr("fill",function(d,i){return color(d)})
+                    .attr("x",function(d,i){return 20})
+                    .attr("y",function(d,i){return (20+i*25)})
+                    .text(function(d,i){ return d})
+                }
         }
             Total_provinceNest = d3.nest()
                 .key(function(d){
@@ -272,12 +287,23 @@
                     }
                     else {
                         if (data_nest=="actor"){
-                            
+                            localdata["Total"] = "str"+k.length;
                             k.forEach(function (d){
                                 if (localdata[d.actor]==undefined){
-                                    localdata[d.actor]=0;
+                                    localdata[d.actor]=1;
                                 }
                                 else localdata[d.actor]+=1;
+                            
+                        })
+                           
+                        }
+                        if (data_nest=="deathcause"){
+                            
+                            k.forEach(function (d){
+                                if (localdata[d.deathcause]==undefined){
+                                    localdata[d.deathcause]=1;
+                                }
+                                else localdata[d.deathcause]+=1;
                             
                         })
                             localdata["Total"] = "str"+k.length;
