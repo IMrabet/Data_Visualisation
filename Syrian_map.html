@@ -28,7 +28,9 @@
 			<link rel="stylesheet" href="css/nice-select.css">					
 			<link rel="stylesheet" href="css/animate.min.css">
 			<link rel="stylesheet" href="css/owl.carousel.css">
-			<link rel="stylesheet" href="css/main.css">
+            <link rel="stylesheet" href="css/main.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 		
 		
   <style>
@@ -57,6 +59,10 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://d3js.org/d3.v4.js"></script>
   <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
 
 			  <header id="header" id="home">
 			    <div class="container">
@@ -78,12 +84,18 @@
 			    </div>
 			  </header>
   <div style="height:300px"></div>
-	
+  <p>Distribution of deths by: </p>
+  <input type="radio" id="sujet1" name="sujet" value="age" checked>
+  <label for="dem">Age and gender</label><br>
+  <input type="radio" id="sujet2" name="sujet" value="actor">
+  <label for="dep">Actor</label><br>
+  <input type="radio" id="sujet3" name="sujet" value="cause">
+  <label for="sub">Cause of death</label> 
   <script>
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
-	var width =900 - margin.left - margin.right,
-    height = 900 - margin.top - margin.bottom;
+	var width =500 - margin.left - margin.right,
+    height = 700 - margin.top - margin.bottom;
 
 
     var container= d3.select("body").append("div").attr("class", "container-fluid").append("div")
@@ -96,41 +108,30 @@
         .style("opacity", 0);
         
     var svg = container.append("svg")
-        .attr("class","col-sm-7")
+        .attr("class","col-sm-6")
         .attr("width", width +margin.left +margin.right)
         .attr("height", height +margin.top + margin.bottom)
     
      var container2 = container.append("div")
-        .attr("class","col-sm-5 order-last")
+        .attr("class","col-sm-6 order-last")
+        .style("over-flow","hidden")
 
     // svg.call(d3.zoom().on("zoom", function () {
     //    svg.attr("transform", d3.event.transform)
     // }))
         
     var svg2 = container2.append("svg")        
-        .attr("width",500)
-        .attr("hieght",300)
+        .attr("width",700)
+        .attr("height",600)
         
 
         
     
-    var genders=["Adult - Male","Adult - Female","Child - Male","Child - Female","Total"];
+    var genders=["Adult - Male","Child - Male","Adult - Female","Child - Female","Total"];
     
-    var color= d3.scaleOrdinal(d3.schemeCategory10 ).domain(genders)
+    var color= d3.scaleOrdinal(d3.schemeCategory20 ).domain(genders)
 
-    svg.selectAll("rect").data(genders.slice(0,4)).enter().append("rect")
-        .attr("fill",function(d,i){return color(d)})
-        .attr("x",function(d,i){return margin.left})
-        .attr("y",function(d,i){return (margin.top+i*25)})
-        .attr("width",25)
-        .attr("height",25)
-
-    svg.selectAll("text").data(genders.slice(0,4)).enter().append("text")
-        .attr("fill",function(d,i){return color(d)})
-        .attr("x",function(d,i){return margin.left+30})
-        .attr("y",function(d,i){return (margin.top+i*25+12)})
-        .text(function(d,i){ return d})
-        
+   
 
     
     
@@ -139,76 +140,195 @@
 
   var projection = d3.geoConicConformal().center([38,35])
   
-  
+    var data;
     var centroids;
     var ProvinceNest;
-    var max
-    var min 
-	d3.json("https://raw.githubusercontent.com/lylla318/Syria_Story/master/data/syria-districts-topojson.json", function(error, json) {
+    var max ;
+    var min ;
+    var json;
+    
+	d3.json("https://raw.githubusercontent.com/lylla318/Syria_Story/master/data/syria-districts-topojson.json", function(error, jsonfile) {
 
         projection.scale(5000)
 
         var path = d3.geoPath() // d3.geo.pa,th avec d3 version 3
         .projection(projection);
 
-        var bounds=path.bounds(topojson.feature(json, json.objects.SYR_adm2));
-        json = topojson.feature(json, json.objects.SYR_adm2)
-
-        d3.csv("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/VDC_Syria_CASREP.csv",
-          function(error, data){
-
+        var bounds=path.bounds(topojson.feature(jsonfile, jsonfile.objects.SYR_adm2));
+        json = topojson.feature(jsonfile, jsonfile.objects.SYR_adm2);
+        // console.log(json);
 
         
-            provinceNest = d3.nest()
+    d3.csv("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/VDC_Syria_CASREP.csv",
+        function(error, datafile){
+        
+        parseDate = d3.timeParse("%Y-%m-%d");
+        formatDate=d3.timeFormat("%Y")
+        datafile.forEach(function(d){
+            d.deathdate=parseDate(d.deathdate);          
+
+        });
+        data = datafile;
+        // console.log(data);
+
+        
+
+
+          function visualise_data(data,json,time_start,time_end,data_nest){
+            svg.html("")
+            console.log("ok")
+            if (data_nest=="age"){
+                svg.selectAll("rect").data(genders.slice(0,4)).enter().append("rect")
+                .attr("fill",function(d,i){return color(d)})
+                .attr("x",function(d,i){return 10})
+                .attr("y",function(d,i){return (10+i*25)})
+                .attr("width",10)
+                .attr("height",10)
+
+                svg.selectAll("text").data(genders.slice(0,4)).enter().append("text")
+                .attr("fill",function(d,i){return color(d)})
+                .attr("x",function(d,i){return 20})
+                .attr("y",function(d,i){return (20+i*25)})
+                .text(function(d,i){ return d})
+            
+        }
+            else {
+                if (data_nest=="actor"){
+                    dataNest= d3.nest().key(function(d){return d.actor}).entries(data).map(function(e){return e.key})
+                    svg.selectAll("rect").data(dataNest).enter().append("rect")
+                    .attr("fill",function(d,i){return color(d)})
+                    .attr("x",function(d,i){return 10})
+                    .attr("y",function(d,i){return (10+i*25)})
+                    .attr("width",10)
+                    .attr("height",10)
+
+                    svg.selectAll("text").data(dataNest).enter().append("text")
+                    .attr("fill",function(d,i){return color(d)})
+                    .attr("x",function(d,i){return 20})
+                    .attr("y",function(d,i){return (20+i*25)})
+                    .text(function(d,i){ return d})
+                }
+        }
+            Total_provinceNest = d3.nest()
                 .key(function(d){
                     return d.province;
                 })
                 .rollup(function(k){
                     //  console.log(k)
                     var localdata={}
-                    localdata["Adult - Male"] = 0;
+                    /*localdata["Adult - Male"] = 0;
                     localdata["Adult - Female"] =0 ;
                     localdata["Child - Female"] =0 ;
                     localdata["Child - Male"] =0 ;
                     k.forEach(function (d){
                     localdata[d.gender]+=1;
-                    })
+                    })*/
                     localdata["Total"] = "str"+k.length;
                     // console.log(localdata)
                     return localdata;
                 }).entries(data)
-                            
 
-            // console.log(provinceNest);
+                // console.log(provinceNest)
+                //  get the max and the min of the provinces deaths
+                
+                var max =0;
+                var min =1E9;
+                Total_provinceNest.forEach(function(k,i){
+                    if (max<=parseInt(k.value["Total"].substr(3),10)){
+                            max = parseInt(k.value["Total"].substr(3),10);
+                        }
+                        if (min>=parseInt(k.value["Total"].substr(3),10)){
+                            min = parseInt(k.value["Total"].substr(3),10);
+                        }
+                })
+            
+            
+                
+               
+             // select data to show 
+              data_to_visualise= data.filter(function(d){
+                  return (d.deathdate>=parseDate(time_start) & d.deathdate<=parseDate(time_end))
+              })
+              
+            //   console.log(data_to_visualise)
+
+              provinceNest = d3.nest()
+                .key(function(d){
+                    return d.province;
+                })
+                .rollup(function(k){
+                    //  console.log(k)
+                    var localdata={}
+                    if (data_nest=="age"){
+                        localdata["Adult - Male"] = 0;
+                        localdata["Adult - Female"] =0 ;
+                        localdata["Child - Female"] =0 ;
+                        localdata["Child - Male"] =0 ;
+                        k.forEach(function (d){
+                        localdata[d.gender]+=1;
+                        })
+                        localdata["Total"] = "str"+k.length;
+                        // console.log(localdata)
+                    }
+                    else {
+                        if (data_nest=="actor"){
+                            
+                            k.forEach(function (d){
+                                if (localdata[d.actor]==undefined){
+                                    localdata[d.actor]=0;
+                                }
+                                else localdata[d.actor]+=1;
+                            
+                        })
+                            localdata["Total"] = "str"+k.length;
+                        }
+                    }
+                    return localdata;
+                   
+                }).entries(data_to_visualise)
+
+
+                //  get the max and the min of the provinces deaths
+                
+                var maxcolor =0;
+                var mincolor =1E99;
+                provinceNest.forEach(function(k,i){
+                    if (maxcolor<=parseInt(k.value["Total"].substr(3),10)){
+                            maxcolor = parseInt(k.value["Total"].substr(3),10);
+                        }
+                        if (mincolor>=parseInt(k.value["Total"].substr(3),10)){
+                            mincolor = parseInt(k.value["Total"].substr(3),10);
+                        }
+                })               
+
+            // console.log(prvinceNest);
             
             centroids_center= d3.nest().key(function(d){return d.properties.NAME_1})
             .rollup(function(k){
-                var mean_x = 0;
-                var mean_y =0;
+                var table=[]
                 k.forEach(function(d){
                     // console.log(d)
-                    mean_x += path.centroid(d)[0];
-                    mean_y+= path.centroid(d)[1];
+                    // console.log(d.geometry.coordinates[0])
+                    if( d.geometry.coordinates[0][0].length==2){table=table.concat(d.geometry.coordinates[0])}
+                    else{table=table.concat(d.geometry.coordinates[0][0])}
+                    
                 })
-                mean_x =mean_x/ k.length;
-                mean_y =mean_y/ k.length;
-               return ({"x":mean_x,"y":mean_y});
+                // console.log(k[0].properties.NAME_1);
+                var localfeature={"type": "Feature","properties": {},"geometry": {"type": "Polygon", "coordinates":[table]}}
+                // console.log(localfeature)
+               return ({"x":path.centroid(localfeature)[0],"y":path.centroid(localfeature)[1]});
             })
             .entries(json.features)
             // console.log(centroids_center)
+            // console.log(centroids_center)
 
-            max =0;
-            min =1E9;
-            provinceNest.forEach(function(k,i){
-                if (max<=parseInt(k.value["Total"].substr(3),10)){
-                        max = parseInt(k.value["Total"].substr(3),10);
-                    }
-                    if (min>=parseInt(k.value["Total"].substr(3),10)){
-                        min = parseInt(k.value["Total"].substr(3),10);
-                    }
+            
+            var regions =centroids_center.map(function(name){
+                return name.key
             })
-            // console.log(max);
-            var opacity = d3.scaleLinear().range([5,10]).domain([min,max])
+            // console.log(regions)
+
+            var colorRegions = d3.scaleOrdinal(d3.schemePaired).domain([0,13])
             var radius = d3.scaleLinear().range([10,50]).domain([min,max])
 
 
@@ -244,11 +364,11 @@
 
                 geo_path=current.append("path")
                 .attr("d", path)
-                .attr("fill","orange")
-                .attr("opacity",function(feat){
+                //.attr("fill","orange")
+                .attr("fill",function(feat){
                     // console.log(parseInt(feat.properties.infos.Total.substr(3),10));
-                    return opacity(parseInt(feat.properties.infos.Total.substr(3),10))/10})
-                .attr("transform","translate(0,30)")
+                    return colorRegions(regions.indexOf(feat.properties.NAME_1))})
+                .attr("transform","translate(-80,30)")
                 
 
 
@@ -282,14 +402,16 @@
                   .attr("stroke", "white")
                   .attr("transform", function(d) {
                     //   console.log(d)
-                      return "translate("+parseInt(d.data.x.substr(1))+","+parseInt(d.data.y.substr(1))+")"
+                      return "translate("+(parseInt(d.data.x.substr(1))-75)+","+(parseInt(d.data.y.substr(1))+30)+")"
                   })
                   geo_path.on("click",function(e){
-                    svg2.html("");
+                    svg2.transition()
+                    svg2.html("")
+                    .transition();
                      
                      var data_show = pie(d3.entries(e.properties.infos))
                     // console.log(data_ready)
-                    console.log(data_show)
+                    // console.log(data_show)
                         data_show.forEach(function(dat){
                     dat.data["x"]=e.properties.infos.x;
                     dat.data["y"]=e.properties.infos.y
@@ -306,18 +428,18 @@
                         return(color(d.data.key)) 
                     })
                     .attr("stroke", "white")
-                    .attr("transform","translate("+(margin.left+50)+","+(margin.top+75)+")")
+                    .attr("transform","translate("+(margin.left+50)+","+(margin.top+25*(Object.keys(data_show).length-2)/2)+")")
                     
                     svg2.append("text")
-                            .text("Distribution des morts dans la région: "+e.properties.NAME_1)
+                            .text("Distribution of deaths by "+data_nest+" in : "+e.properties.NAME_1)
                             .attr("x",margin.left+110)
                             .attr("y", margin.top)
 
                     var keys = Object.keys(e.properties.infos);
-                    console.log(keys)
+                    // console.log(keys)
                     var index =1;
                     for (let key of keys){
-                        if (genders.includes(key)){
+                        if (key!="x" && key!="y"){
                             svg2.append("text")
                             .text(
                                 function(){
@@ -337,7 +459,8 @@
 
                 geo_path.on("mouseover",function(e){
                     svg.selectAll("path").filter(function(d){
-                        return d==e
+                        if (d.properties !=undefined) {return d.properties.NAME_1==e.properties.NAME_1}
+                        else return false
                     }).attr("fill","yellow")
                     div.transition()		
                     .duration(200)		
@@ -350,17 +473,34 @@
                     
                 }).on("mouseout",function(e){
                     svg.selectAll("path").filter(function(d){
-                        return d==e
-                    }).attr("fill","orange")
+                        if (d.properties !=undefined) {return d.properties.NAME_1==e.properties.NAME_1}
+                        else return false
+                    }).attr("fill",function(feat){
+                    // console.log(parseInt(feat.properties.infos.Total.substr(3),10));
+                    return colorRegions(regions.indexOf(feat.properties.NAME_1))})
                     div.transition()		
                     .duration(200)		
                     .style("opacity", 0)
                 })              
-                
-                  
-        })         
-        })   
-    })
+            }) 
+            
+                    
+                          
+}
+visualise_data(data,json,"2011-01-01","2020-01-01","age")
+            $('input:radio').on('change', function(e){
+            var name = e.currentTarget.name,
+            value = e.currentTarget.value;
+            visualise_data(data,json,"2011-01-01","2020-01-01",value)
+            });
+})
+})
+// while(data==undefined || json == undefined){
+// console.log("ok")
+// }
+// console.log(data);
+// console.log(json);
+
 </script>
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
