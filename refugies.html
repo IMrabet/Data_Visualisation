@@ -58,9 +58,22 @@
     pointer-events: none;
     background-color:rgba(76, 175, 80, 0.3);
     left:0px;
-    top:100px;}
-    body { margin:0;top:0;right:0;bottom:0;left:0; }
-  
+    top:200px;}
+   
+	
+	div.div2svg{	
+    position: relative;			
+    text-align: center;	
+    color: black;
+    font-size: 10px;
+    padding: 5px;				
+    font: 10px Cursive;		
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    left:0px;
+    top:0px;}
+   body { margin:0;top:0;right:0;bottom:0;left:0; }
   </style>
 </head>
 
@@ -87,18 +100,24 @@
 			  </header>
 			  
  <div style="height:100px"></div>
-
+ <div style="height:100px">
+  <input type="radio" id="sujet1" name="sujet" value="dem" checked>
+<label for="dem">Demography</label><br>
+<input type="radio" id="sujet2" name="sujet" value="dep">
+<label for="dep">Departures</label><br>
+<input type="radio" id="sujet3" name="sujet" value="sub">
+<label for="sub">Subbmissions</label> 
+</div>
  <!-- Create a div where the graph will take place -->
-<div id="my_dataviz" height = "1000px"></div>
- <div style="height:100px"></div>
+<div id="my_dataviz"></div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-  width = 1200 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+  width = 900 - margin.left - margin.right,
+  height = 470 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -108,6 +127,8 @@ var svg = d3.select("#my_dataviz")
 .append("g")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
+
+
 
 const America=["USA","URY","MEX","CAN","BRA","ARG","ATG","ABW","BHS","BLZ","BOL","VGB","CYM","CHL","COL","CRI","CUB","CUW","DOM","ECU","SLV","GRD","GTM","GUY","HTI","HND","JAM","MEX","NIC","PAN","PER","KNA","LCA","SUR","TTO","TCA","VEN"];
 const Europe =["ALB","AUT","BLR","BEL","BGR","HRV","CYP","CZE","DNK","EST","FIN","FRA","DEU","HUN","ISL","IRL","ITA","LVA","LIE","LTU","LUX","MLT","MCO","NLD","NOR","PRY","POL","PRT","ROU","SVK","SVN","ESP","SWE","CHE","GBR","ARM","AZE","BIH","GEO","MKD","MDA","RUS","SRB","TUR","UKR"];
@@ -122,15 +143,35 @@ var div = d3.select("body").append("div")
 var divtitle = d3.select("body").append("div")	
        .attr("class", "titre1553");
 // Add title
-divtitle.html("Demographie des refugiés dans le monde");
+divtitle.html("Demography of refugees in the world");
   
 var color_on_click;
 
 var original_x_befor_click, original_y_befor_click, original_width_befor_click, original_height_befor_click, continent_onclick;
+divtitle.html("Demography of refugees in the world")
+draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
 
-draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv");
-  
-function draw_all(dataLink){
+$('input:radio').on('change', function(e){
+  var name = e.currentTarget.name,
+  value = e.currentTarget.value;
+ if(value=="dem"){
+ divtitle.html("Demography of refugees in the world")
+ draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
+
+	}
+ else if(value=="dep"){
+ divtitle.html("Demography of refugees in the world")
+ draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false);
+		}
+ else{
+ divtitle.html("Demography of refugees in the world")
+		draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQSubmissions_Americas.csv","Total_submissons_persons",false); 
+	};
+});
+
+			
+	
+function draw_all(dataLink,champ,active_onClick){
 // read json data
 d3.csv(dataLink, function(data_csv) {
    
@@ -179,7 +220,7 @@ var data = JSON.parse(nestedJSON);
     if(d.values){                                            
     d.values.forEach(function(v){
       v.values.forEach(function(e){
-        total_country+=parseInt(e.Grand_Total);})
+        total_country+=parseInt(e[champ]);})
     });}
     return total_country}); // Here the size of each leave is given in the 'value' field in input data
 
@@ -196,24 +237,27 @@ var data = JSON.parse(nestedJSON);
     //.paddingOuter(6)
     //.padding(20)
     (root)
-d3.selectAll("rect").remove();
+
   // prepare a color scale
   var color = d3.scaleOrdinal()
     .domain(["Europe", "Amerique", "Asie","Australie","Afrique"])
-    .range([ "#5659fe", "#ff4a47", "#12b700","#cfd20d", "#e137c2"])
+    .range([ "#8f91fe", "#ff7775", "#13c600","#d9dc0e", "#e75fce"]);
 
    // use this information to add rectangles:
-  svg
-    .selectAll("rect")
+   if(active_onClick==false){
+   d3.selectAll("rect").transition().duration(1000).attr("wdith",0).attr("height",0);
+   setTimeout(function(){
+    d3.selectAll("rect").remove();
+    var rects = svg.selectAll("rect")	
     .data(root.leaves())
     .enter()  	
     .append("rect")
       .attr("id",function(d){return d.data.key;})
       .attr('x', function (d) { return d.x0; })
       .attr('y', function (d) { return d.y0; })
-      .attr('width', function (d) { return d.x1 - d.x0; })
-      .attr('height', function (d) { return d.y1 - d.y0; })
-      .style("stroke", "black")
+      .attr('width', 0)
+      .attr('height', 0)
+      .style("stroke", "black")	  
       .style("fill", function(d){
     			return color(d.parent.data.continent);} )
       .style("opacity", 1)
@@ -225,7 +269,48 @@ d3.selectAll("rect").remove();
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", (d3.event.pageY - 28) + "px");})					
       .on("mouseout", function(){div.style("opacity", 0);})
-      .on("click",function(d){	
+      .on("click",function(d){
+	  var listattrubute =[champ]
+	  divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+"("+d.data.values[0].values[0].Country_of_Resettlement_ISO+")")
+		display_courbe(data_csv,d.data.values[0].values[0].Country_of_Resettlement_ISO,listattrubute);
+	  });
+	  rects.transition()  // Gives the fly out from the center effect
+          .delay(function (d, i){
+              return i * 10;  // Gives a slight delay with 100 ms spacing
+          })
+          .duration(800)         
+          .attr('width', function (d) {return d.x1 - d.x0; })
+      .attr('height', function (d) {return d.y1 - d.y0; })
+	  write_labels(root);},1000)
+	  
+   }
+   else{
+   d3.selectAll("rect").transition().duration(1000).attr("wdith",0).attr("height",0);
+   var coords =[];
+   var i =0;
+   setTimeout(function(){d3.selectAll("rect").remove();
+    var rects = svg.selectAll("rect")
+    .data(root.leaves())
+    .enter()  	
+    .append("rect")
+      .attr("id",function(d){return d.data.key;})
+      .attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', 0)
+      .attr('height', 0)
+      .style("stroke", "black")	  
+      .style("fill", function(d){
+    			return color(d.parent.data.continent);} )
+      .style("opacity", 1)
+      .on("mouseover", function(d){div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("Continent : "+d.parent.data.continent+ "<br/>Pays: "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> cliquez pour plus de détails")	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", (d3.event.pageY - 28) + "px");})					
+      .on("mouseout", function(){div.style("opacity", 0);})
+      .on("click",function(d){	if(active_onClick){
         div.style("opacity", 0);
         continent_onclick = d.data.key;
         original_x_befor_click = d.x0 ;
@@ -234,6 +319,7 @@ d3.selectAll("rect").remove();
         original_height_befor_click= d.y1 - d.y0;
         color_on_click = color(d.parent.data.continent);
         
+		
         d3.selectAll("rect").filter(function(e){
             return d==e
               }).transition()		
@@ -252,15 +338,30 @@ d3.selectAll("rect").remove();
    			d3.selectAll("titles").remove();
     		d3.selectAll("vals").remove();
          
-    		divtitle.html("Demographie des refugiés dans "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")");
+    		divtitle.html("Demography of refugees in "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")");
     
-    setTimeout(function(){draw_by_gender(dataLink,d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")",d.data, d.data.key, color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click)},900);
-      });
-
+    setTimeout(function(){draw_by_gender(dataLink,d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")",d.data, d.data.key, color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,data_csv,d.data.key)},1000);
+      }});
+	  
+	  rects.transition()  // Gives the fly out from the center effect
+          .delay(function (d, i){
+              return i * 10;  // Gives a slight delay with 100 ms spacing
+          })
+          .duration(800)         
+          .attr('width', function (d) {return d.x1 - d.x0; })
+      .attr('height', function (d) {return d.y1 - d.y0; })
+	  
+	  write_labels(root);
+	},1000);}
+	
+	function write_labels(data){
+	d3.selectAll("text").remove();
+   			d3.selectAll("titles").remove();
+    		d3.selectAll("vals").remove();
   // and to add the text labels
   svg
     .selectAll("text")
-    .data(root.leaves().filter(function(d){return d.value>=230;}))
+    .data(data.leaves().filter(function(d){return d.value>=230;}))
     .enter()
     .append("text")
       .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
@@ -272,7 +373,7 @@ d3.selectAll("rect").remove();
   // and to add the text labels
   svg
     .selectAll("vals")
-    .data(root.leaves().filter(function(d){return d.value>=500;}))
+    .data(data.leaves().filter(function(d){return d.value>=500;}))
     .enter()
     .append("text")
       .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
@@ -284,7 +385,7 @@ d3.selectAll("rect").remove();
   // Add title for the 3 groups
   svg
     .selectAll("titles")
-    .data(root.descendants().filter(function(d){return d.depth==1})
+    .data(data.descendants().filter(function(d){return d.depth==1})
               .filter(function(d){return d.value>0;}))
     .enter()
     .append("text")
@@ -293,8 +394,12 @@ d3.selectAll("rect").remove();
       .text(function(d){ return d.data.continent + ": "+d.value; })
       .attr("font-size", "19px")
       .attr("fill",  function(d){return color(d.data.continent)} )
+	  } 
+  });
+  }
 
- function create_rectTitle(data_link,continent_onclick,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click){
+
+ function create_rectTitle(data_link,continent_onclick,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,color_on_click){
 	svg.append("rect")
     	.attr("x",0)
     	.attr("y",0)
@@ -314,7 +419,7 @@ d3.selectAll("rect").remove();
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
         
-      	  divtitle.html("Demographie des refugiés dans le monde"); 
+      	  divtitle.html("Demography of refugees in the world"); 
          
       
           d3.select("#recttitle1").attr("opacity",0)
@@ -332,12 +437,15 @@ d3.selectAll("rect").remove();
             .attr('width', original_width_befor_click)
             .attr('height', original_height_befor_click)
           	.attr("opacity",0);
-         setTimeout(function(){draw_all(data_link)},900);
+         setTimeout(function(){draw_all(data_link,"Grand_Total",true)},900);
         })
 }
-	
 
- function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click){
+
+
+
+
+function draw_by_gender(data_link,countryName,dataofcountry,keyofcountry,color_on_click,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click,data_csv,countryKey){
    
   var Female_0_17=0;var Female_18_59=0;var Female_60_plus=0;var Female_Total=0;var Female_unknown_age=0;
  var male_0_17=0;var male_18_59=0;var male_60_plus=0;var male_Total=0;var male_unknown_age=0;
@@ -365,7 +473,8 @@ d3.selectAll("rect").remove();
 '{"name":"male_60_plus","value":"'+male_60_plus+'"},'+
  '{"name":"male_unknown_age","value":"'+male_unknown_age+'"}]'+
  ',"value":"'+male_Total+'"}]}'
-   
+   var listattrubute = ["Female_0_17","Female_18_59","Female_60_plus","Female_unknown_age","male_0_17","male_18_59","male_60_plus","male_unknown_age"];
+    
  var stractueddataofcountry = JSON.parse(nestedJSONdataofcountry); 
   //console.log(stractueddataofcountry);
    var root1 = d3.hierarchy(stractueddataofcountry).sum(function(d){return d.value;});
@@ -381,7 +490,7 @@ d3.treemap()
   // prepare a color scale
   var colorGender = d3.scaleOrdinal()
     .domain(["male", "Female"])
-    .range([ "#de0256", "#ff7d32"]);
+    .range([ "#f70260", "#fe9456"]);
 	//console.log(root1.leaves())
   // use this information to add rectangles:
    
@@ -423,7 +532,8 @@ d3.treemap()
            })					
       .on("mouseout", function(){div.style("opacity", 0);})
       .on("click",function(d){
-     	
+	    
+     	display_courbe(data_csv,countryKey,listattrubute);
       });
    
    svg.append("rect")
@@ -446,7 +556,8 @@ d3.treemap()
                   .style("top", ( d3.event.pageY - 28) + "px");
    			})					
       .on("mouseout", function(){div.style("opacity", 0);})
-      .on("click",function(d){     	
+      .on("click",function(d){ 
+         display_courbe(data_csv,countryKey,listattrubute);
       });
    
 create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click);
@@ -490,8 +601,147 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
       .attr("font-size", "20px")
       .attr("font-weight", "bold")
       .attr("fill",  function(d){return colorGender(d.data.name)} )
-  }
-})} 
+  }  
+     
+  function display_courbe(data,country,listattrubute){   
+     //console.log(data);
+     //console.log(data);
+	
+	 d3.select("#my_dataviz2Ev").remove();
+	 
+	 var div = d3.select("body").append("div")	
+       .attr("class", "div2svg")	
+       .attr("id","my_dataviz2Ev");
+	   
+	 var svg2 = d3.select("#my_dataviz2Ev")
+		.append("svg")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform",
+		"translate(" + margin.left + "," + margin.top + ")");
+		
+     var parseDate = d3.timeParse("%Y");
+     data.forEach(function(d){      
+       				d.Year = parseDate(d.Year);        
+           })
+     
+     var x = d3.scaleTime()
+    	.domain(d3.extent(data,function(d){return d.Year;})).nice()
+			.range([0, width-margin.left-margin.right])
+			
+	var maximumValue = 0;
+	var filtred_data = data.filter(function(d){return d.Country_of_Resettlement_ISO == country;}); 
+	
+    
+     
+    var color= d3.scaleOrdinal(d3.schemeCategory20);   
+   	     
+     
+      
+  for(i of listattrubute ){   
+        scatterplot(svg2,filtred_data,color(i),'Year',i,width,height,25,0);        
+      }
+
+  function scatterplot(el,data,var_color,var_x,var_y,       
+	   dim_width,dim_height,pos_x,pos_y){ 
+	   
+			   
+     
+  		var nested_data = d3.nest()      
+          .key(function(d) { return d[var_x];})
+          .rollup(function(d) {
+            return d3.sum(d,function(v){
+              return parseInt(v[var_y])});
+          })
+          .entries(data);
+ 
+      maximumValue = d3.max([maximumValue,d3.max(d3.extent(nested_data,function(d){return d.value;}))])
+	 console.log(maximumValue);
+     var y = d3.scaleLinear()
+            .domain([0, maximumValue])
+            .range([height-margin.top-margin.bottom,0])
+			
+    //console.log(nested_data);
+     var displayDate = d3.timeFormat("%Y");  
+    
+     
+     var line = d3.line()
+    	.curve(d3.curveMonotoneX)
+      .x(function(d, i) { return x(parseDate(d.key.split(" ")[3]));})
+      .y(function(d, i) { return  y(parseInt(d.value));})
+     
+   		var g= el.append("g")
+          		.attr("transform","translate("+pos_x+","+pos_y+")")
+      
+       g.selectAll("path")
+            .data([nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3]))])
+          	.enter().append("path")
+            .style("fill","none")
+     				.style("stroke",var_color)
+            .style("stroke-width",2)
+     				.attr("d", line)
+            .on('mouseover',function(d){
+              d3.selectAll("path").filter(function(e){
+                return d==e
+              }).style("stroke", "red")
+              	.style("stroke-width", 4)
+            })
+            .on("mouseout",function(d){
+              d3.selectAll("path").filter(function(e){
+                return d==e
+              }).style("stroke", var_color)
+              	.style("stroke-width", 2)
+              	
+            })
+            
+            var h =g.append("text").style("opacity",0);
+            
+            g.selectAll("circle")
+            .data(nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3])))
+          	.enter().append("circle")
+            .attr("cx", function(d) { return x(parseDate(d.key.split(" ")[3])); })
+            .attr("cy", function(d) { return y(parseInt(d.value)); })
+            .attr("r",3)
+          	.attr("fill",var_color)
+            .on('mouseover',function(d){
+              d3.selectAll("circle").filter(function(e){
+                return d==e;
+              }).style('fill', function(e){
+                 h.attr("x",function() { return x(parseDate(d.key.split(" ")[3])); })
+                   .attr("y",function() { return y(parseInt(d.value)); })
+                   .text(d.key.split(" ")[3]+", "+d.value)
+                   .style("opacity",1)
+                	return "grey";
+                       					})
+            })
+            .on("mouseout",function(d){
+              d3.selectAll("circle").filter(function(e){                
+                return d==e;                
+              }).style("fill",function(e){
+                h.style("opacity",0);
+                return var_color;})           	
+            })
+   	
+      
+   		var xAxis = d3.axisBottom()
+    				.scale(x);
+
+		var yAxis = d3.axisLeft()
+    				.scale(y);
+
+          g.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," +(dim_height-margin.top-margin.bottom)+ ")")
+            .call(xAxis)
+          
+          g.append("g")
+            .attr("class", "y axis")
+          	.attr("transform", "translate("+0+",0 )")
+            .call(yAxis)
+}
+
+}
 </script>
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
