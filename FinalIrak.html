@@ -44,7 +44,19 @@ div.tooltip {
     border-radius: 8px;			
       pointer-events: none;}
 
-
+div.titre1553 {	
+    position: relative;			
+    text-align: center;	
+    color: black;
+    font-size: 19px;
+    padding: 5px;				
+    font: 19px Cursive;		
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    background-color:rgba(76, 175, 80, 0.3);
+    left:0px;
+    top:0px;}
  </style>
 </head>
 
@@ -75,6 +87,7 @@ div.tooltip {
 <z></z>
 
 	<div style="height:100px"></div>
+	<div class="titre1553"> Evolution of deaths in Iraq from 2003 to 2017</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -101,7 +114,7 @@ var y = d3.scaleLinear()
   d3.csv('https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/ibc-incidents-2020-2-7.csv', function(error, raw2) {
     raw2.forEach(function(d, i) {
       var t ={}
-      t.date = parseTime(d.StartDate);
+      t.date = new Date(d.StartDate).getFullYear();
       data_stack2.push(t)
     })
 
@@ -208,7 +221,7 @@ var y = d3.scaleLinear()
   	.range([0, width]);
 
   // Date format https://bl.ocks.org/zanarmstrong/ca0adb7e426c12c06a95
-  var parseTime  = d3.timeParse("%b %Y")
+  var parseTime  = d3.timeParse("%d %b %Y")
   
   var color = d3.scaleOrdinal(d3.schemeCategory20) 
   var symbols2 = []
@@ -221,10 +234,11 @@ var y = d3.scaleLinear()
     //on modifie les données
      
     raw.forEach(function(d, i) {
-      var t ={}
-      t.date = new Date(new Date(d.StartDate).getFullYear() + " " + (new Date(d.StartDate).getMonth()+1)) ;
-      data_stack.push(t)
+      var t ={}   
+      t.date = new Date( new Date(d.StartDate).getFullYear(), new Date(d.StartDate).getMonth()-1) ;      
+      data_stack.push(t);
     })
+    
     var data = d3.nest()
    	.key(function(d){
       				return d.date
@@ -255,6 +269,7 @@ var y = d3.scaleLinear()
 
  
         // Calculated on the flat dataset
+       
         x = d3.scaleTime()
       .domain(d3.extent(final, function(d) { return d.date; }))
       .range([ 0, width ]);
