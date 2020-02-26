@@ -200,12 +200,12 @@ var symbols = []
       name = []
             for (let step = e[0]; step < e[0]+150; step++){
                // name.push("Nom:  "+ domaine[step].name + "\t\tProvince:  " + domaine[step].province +"\t\tBirthDate:  " + domaine[step].deathdate.toDateString() +"\n")
-                  name.push({"nom" : domaine[step].name, "province": domaine[step].province ,"birthDate" :domaine[step].deathdate.toDateString()})
+                  name.push({"nom" : domaine[step].name, "province": domaine[step].province ,"deadDate" :domaine[step].deathdate.toDateString()})
 
               }
-              myp.innerHTML = "<tr><th>Nom</th><th>Province</th><th>BirthDate</th></tr>"
+              myp.innerHTML = "<tr><th>Nom</th><th>Province</th><th>DeadDate</th></tr>"
             name.forEach(function(d){
-              myp.innerHTML += "<tr><td>" + d.nom+"</td><td>" + d.province + "</td><td>" + d.birthDate + "</td></tr>"
+              myp.innerHTML += "<tr><td>" + d.nom+"</td><td>" + d.province + "</td><td>" + d.deadDate + "</td></tr>"
             })
       
         })
