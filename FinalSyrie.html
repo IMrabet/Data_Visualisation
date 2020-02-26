@@ -32,7 +32,14 @@
 		
 		
   <style>
-
+table
+{
+    border-collapse: collapse;
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 2px solid gray;
+}
 div.tooltip {	
     position: absolute;			
     text-align: center;	
@@ -48,7 +55,7 @@ div.tooltip {
 </head>
 
 <body>
-<div style="height:100px"></div>
+<div style="height:100px">
 			  <header id="header" id="home">
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
@@ -68,8 +75,13 @@ div.tooltip {
 			    	</div>
 			    </div>
 			  </header>
-  <div style="height:300px"></div>
-
+  </div>
+  <z></z>
+  <div align="center">
+    <strong><marquee>La liste des 150 premières personnes du secteur de l'histogramme selectionné est: </marquee></strong>
+    <table id="myp">
+   </table>
+  </div>
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
@@ -115,7 +127,7 @@ var symbols = []
     var listProvinces = []
     
         yearnest.sort(function(a, b) {
-        console.log(a.values)
+        //console.log(a.values)
         a.values.sort(function(d,e){
             return e.value-d.value
         })
@@ -153,9 +165,9 @@ var symbols = []
     y.domain([0, max]);
     x.domain(years);
     
-    console.log(symbols)  
+    //console.log(symbols)  
     var a
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("z").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -173,22 +185,28 @@ var symbols = []
           .attr("height", function(d) { return y(d[0]) - y(d[1]); })
           .attr("width", x.bandwidth())
        .on("click",function(e,i){
+
+      var myp = document.getElementById("myp")
       var domaine = []
+      var name;
       var année = 2019 - i;
       raw.forEach(function(a, k) {
       if(a.deathdate.getFullYear() == année) {
         domaine.push(a)
       }
     });
-      console.log(domaine)
+      //console.log(domaine)
       //gerer le sexe
-      var name = [];
-            for (let step = e[0]; step < e[1]; step++){
-                name.push("Nom:  "+ domaine[step].name + "\t\tProvince:  " + domaine[step].province +"\t\tBirthDate:  " + domaine[step].deathdate.toDateString() +"\n")
+      name = []
+            for (let step = e[0]; step < e[0]+150; step++){
+               // name.push("Nom:  "+ domaine[step].name + "\t\tProvince:  " + domaine[step].province +"\t\tBirthDate:  " + domaine[step].deathdate.toDateString() +"\n")
+                  name.push({"nom" : domaine[step].name, "province": domaine[step].province ,"birthDate" :domaine[step].deathdate.toDateString()})
+
               }
-            var myp = document.getElementById("myp")
-            myp.innerHTML = name
-      		//b.innerHTML="Texte";
+              myp.innerHTML = "<tr><th>Nom</th><th>Province</th><th>BirthDate</th></tr>"
+            name.forEach(function(d){
+              myp.innerHTML += "<tr><td>" + d.nom+"</td><td>" + d.province + "</td><td>" + d.birthDate + "</td></tr>"
+            })
       
         })
         .on("mouseover", function(d,i){
@@ -259,7 +277,7 @@ var symbols = []
     height = 400 - margin.top - margin.bottom;
   
   // Create the SVG
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("z").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
    .append("g")
@@ -315,7 +333,7 @@ var symbols = []
     			})
     	.rollup(function(v) {return v.length })
        .entries(a);
-    console.log(raw)
+    //console.log(raw)
     
     //console.log(raw)
     
@@ -335,7 +353,7 @@ var symbols = []
       data[symbols2.indexOf(d.type)].push(d);
     });
         
-    console.log(data_stack) 
+    //console.log(data_stack) 
   
  
         // Calculated on the flat dataset
@@ -438,11 +456,6 @@ var symbols = []
   });
   
  </script>
-<div ></div>
-<div align="center">
-  <p>Ca doit etre ici</p>
-  <textarea cols="150" rows="10" id = myp></textarea>
-</div>
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			

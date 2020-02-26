@@ -49,7 +49,8 @@ div.tooltip {
 </head>
 
 <body>
-
+  <strong><marquee>Par manque de données, on ne peut pas donner des informations sur les victimes (fait pour la Syrie)</marquee></strong>
+  <div style="height:100px">
 			  <header id="header" id="home">
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
@@ -69,7 +70,9 @@ div.tooltip {
 			    	</div>
 			    </div>
 			  </header>
+</div>
 
+<z></z>
 
 	<div style="height:100px"></div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -126,7 +129,7 @@ var parseTime  = d3.timeParse("%b %Y")
     x.domain(data2.map(function(d) { return d.key; }));
   y.domain([0, d3.max(data2, function(d) { return d.value; })]);
   var a
-		var svg = d3.select("body").append("div").append("svg")
+		var svg = d3.select("z").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
    .append("g")
@@ -191,7 +194,7 @@ var parseTime  = d3.timeParse("%b %Y")
     var a
 
   // Create the SVG
-  var svg = d3.select("body").append("div").append("svg")
+  var svg = d3.select("z").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
    .append("g")
@@ -331,6 +334,8 @@ var parseTime  = d3.timeParse("%b %Y")
 			<script src="js/jquery.nice-select.min.js"></script>			
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>
+      <script src="js/main.js"></script>
+      </br>
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 </body>
 </html>
