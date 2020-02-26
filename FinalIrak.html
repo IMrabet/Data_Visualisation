@@ -101,7 +101,7 @@ var y = d3.scaleLinear()
   d3.csv('https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/ibc-incidents-2020-2-7.csv', function(error, raw2) {
     raw2.forEach(function(d, i) {
       var t ={}
-      t.date = new Date(d.StartDate).getFullYear() ;
+      t.date = parseTime(d.StartDate);
       data_stack2.push(t)
     })
 
