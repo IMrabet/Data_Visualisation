@@ -46,8 +46,8 @@
     border-radius: 8px;			
     pointer-events: none;}
     
-	div.titre1553 {	
-    position: absolute;			
+   div.titre1553 {	
+    position: relative;			
     text-align: center;	
     color: black;
     font-size: 19px;
@@ -58,12 +58,11 @@
     pointer-events: none;
     background-color:rgba(76, 175, 80, 0.3);
     left:0px;
-    top:200px;}
+    top:0px;}
    
 	
-	div.div2svg{	
-    position: relative;			
-    text-align: center;	
+   div.div2svg{	
+    position: relative;    	
     color: black;
     font-size: 10px;
     padding: 5px;				
@@ -99,7 +98,6 @@
 			    </div>
 			  </header>
 			  
- <div style="height:100px"></div>
  <div style="height:100px">
   <input type="radio" id="sujet1" name="sujet" value="dem" checked>
 <label for="dem">Demography</label><br>
@@ -109,7 +107,7 @@
 <label for="sub">Subbmissions</label> 
 </div>
  <!-- Create a div where the graph will take place -->
-<div id="my_dataviz"></div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
@@ -119,6 +117,14 @@ var margin = {top: 10, right: 10, bottom: 10, left: 10},
   width = 900 - margin.left - margin.right,
   height = 470 - margin.top - margin.bottom;
 
+var divtitle = d3.select("body").append("div")	
+       .attr("class", "titre1553");
+// Add title
+divtitle.html("Demography of refugees in the world");
+
+
+var divtreemap = d3.select("body").append("div")	
+       .attr("id", "my_dataviz");
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
 .append("svg")
@@ -140,10 +146,7 @@ var div = d3.select("body").append("div")
        .attr("class", "tooltip")				
        .style("opacity", 0);
 
-var divtitle = d3.select("body").append("div")	
-       .attr("class", "titre1553");
-// Add title
-divtitle.html("Demography of refugees in the world");
+
   
 var color_on_click;
 
@@ -155,17 +158,26 @@ $('input:radio').on('change', function(e){
   var name = e.currentTarget.name,
   value = e.currentTarget.value;
  if(value=="dem"){
- divtitle.html("Demography of refugees in the world")
- draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
+	divtitle.html("Demography of refugees in the world")
+	d3.selectAll("path").remove();
+	d3.selectAll("circle").remove();
+	d3.select("#my_dataviz2Ev").remove();
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDemographics_ALL.csv","Grand_Total",true);
 
 	}
  else if(value=="dep"){
- divtitle.html("Demography of refugees in the world")
- draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false);
+	divtitle.html("Demography of refugees in the world")
+	d3.selectAll("path").remove();
+	d3.selectAll("circle").remove();
+	d3.select("#my_dataviz2Ev").remove();
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQDepartures_Americas.csv","Total_departures_persons",false);
 		}
  else{
- divtitle.html("Demography of refugees in the world")
-		draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQSubmissions_Americas.csv","Total_submissons_persons",false); 
+	divtitle.html("Demography of refugees in the world")
+	d3.selectAll("path").remove();
+	d3.selectAll("circle").remove();
+	d3.select("#my_dataviz2Ev").remove();
+	draw_all("https://raw.githubusercontent.com/IMrabet/Syria_Iraq_Stats/master/data_Iraq_Syria_refugees/RSQSubmissions_Americas.csv","Total_submissons_persons",false); 
 	};
 });
 
@@ -180,7 +192,12 @@ var nested_data = d3.nest()
 	.key(function(d) { return d.Year; })
 	.entries(data_csv);
  //console.log(nested_data);
-  
+
+var parseDate = d3.timeParse("%Y");
+     data_csv.forEach(function(d){      
+       		d.Year = parseDate(d.Year);        
+           })  
+
 var nestedJSON = '{"name":"root","children":[{"continent":"Europe","children":';
 
 var filtred_data_by_europe = nested_data.filter(function(d){  				
@@ -265,7 +282,7 @@ var data = JSON.parse(nestedJSON);
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
-              div.html("Continent : "+d.parent.data.continent+ "<br/>Pays: "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> cliquez pour plus de détails")	
+              div.html("Continent : "+d.parent.data.continent+ "<br/>country : "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> click for more details")	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", (d3.event.pageY - 28) + "px");})					
       .on("mouseout", function(){div.style("opacity", 0);})
@@ -306,7 +323,7 @@ var data = JSON.parse(nestedJSON);
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
-              div.html("Continent : "+d.parent.data.continent+ "<br/>Pays: "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> cliquez pour plus de détails")	
+              div.html("Continent : "+d.parent.data.continent+ "<br/>country : "+d.data.values[0].values[0].Country_of_Resettlement+" ("+d.data.key +")<br/> click for more details")	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", (d3.event.pageY - 28) + "px");})					
       .on("mouseout", function(){div.style("opacity", 0);})
@@ -413,7 +430,7 @@ var data = JSON.parse(nestedJSON);
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
-              div.html("retournez au page d'accueil")	
+              div.html("return to the first treemap")	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", (d3.event.pageY - 28) + "px");}	)					
       .on("mouseout", function(){div.style("opacity", 0);})
@@ -508,15 +525,15 @@ d3.treemap()
       .attr("opacity",1)
       .attr("fill",color_on_click);
    
-   svg.selectAll("rect")
+   var rects = svg.selectAll("rect")
     .data(root1.leaves())
     .enter()  
     .append("rect")
       .attr("id",function(d){return d.data.name;})
       .attr('x', function (d) {return d.x0+5; })
       .attr('y', function (d) { return d.y0; })
-      .attr('width', function (d) { return d.x1 - d.x0; })
-      .attr('height', function (d) { return d.y1 - d.y0; })
+      .attr('width', 0)
+      .attr('height', 0)
       .style("fill", function(d){
     			return colorGender(d.parent.data.name);} )
       .style("opacity", 1)
@@ -526,7 +543,7 @@ d3.treemap()
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
-              div.html("Pays: "+countryName+"</br>catégorie : "+d.data.name+"<br/>valeur : "+d.value+"</br>cliquez pour plus de détails")	
+              div.html("country: "+countryName+"</br>category : "+d.data.name+"<br/>value : "+d.value+"</br>click for more details")	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", ( d3.event.pageY - 28) + "px");
            })					
@@ -536,12 +553,20 @@ d3.treemap()
      	display_courbe(data_csv,countryKey,listattrubute);
       });
    
-   svg.append("rect")
+	rects.transition()  // Gives the fly out from the center effect
+		.delay(function (d, i){
+			return i * 10;  // Gives a slight delay with 100 ms spacing
+		})
+		.duration(800)         
+		.attr('width', function (d) {return d.x1 - d.x0; })
+		.attr('height', function (d) {return d.y1 - d.y0; })
+	  
+   var rectexcept =svg.append("rect")
       .attr("id",root1.leaves()[0].data.name)
       .attr('x', root1.leaves()[0].x0+5)
       .attr('y', root1.leaves()[0].y0)
-      .attr('width', root1.leaves()[0].x1 - root1.leaves()[0].x0)
-      .attr('height', root1.leaves()[0].y1 - root1.leaves()[0].y0)
+      .attr('width', 0)
+      .attr('height', 0)
       .style("fill", function(d){
     			return colorGender(root1.leaves()[0].parent.data.name);} )
       .style("opacity", 1)
@@ -551,7 +576,7 @@ d3.treemap()
                   .duration(500)		
                   .style("opacity", .8)
               		.style("background","white");              
-              div.html("Pays: "+countryName+"</br>catégorie : "+root1.leaves()[0].data.name+"<br/>valeur : "+root1.leaves()[0].value+"</br>cliquez pour plus de détails")	
+              div.html("Country : "+countryName+"</br>category : "+root1.leaves()[0].data.name+"<br/>value : "+root1.leaves()[0].value+"</br>click for more details")	
                   .style("left", (d3.event.pageX) + "px")		
                   .style("top", ( d3.event.pageY - 28) + "px");
    			})					
@@ -559,6 +584,14 @@ d3.treemap()
       .on("click",function(d){ 
          display_courbe(data_csv,countryKey,listattrubute);
       });
+
+	rectexcept.transition()  // Gives the fly out from the center effect
+		.delay(function (d, i){
+			return i * 10;  // Gives a slight delay with 100 ms spacing
+		})
+		.duration(800)         
+		.attr('width', root1.leaves()[0].x1 - root1.leaves()[0].x0)
+		.attr('height', root1.leaves()[0].y1 - root1.leaves()[0].y0)
    
 create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_befor_click,original_width_befor_click,original_height_befor_click);
    d3.selectAll("text").remove();
@@ -606,29 +639,24 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
   function display_courbe(data,country,listattrubute){   
      //console.log(data);
      //console.log(data);
-	
+	 d3.selectAll("path").remove();
+         d3.selectAll("circle").remove();
 	 d3.select("#my_dataviz2Ev").remove();
 	 
-	 var div = d3.select("body").append("div")	
+	 var div2 = d3.select("body").append("div")	
        .attr("class", "div2svg")	
        .attr("id","my_dataviz2Ev");
 	   
 	 var svg2 = d3.select("#my_dataviz2Ev")
 		.append("svg")
 		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform",
-		"translate(" + margin.left + "," + margin.top + ")");
-		
-     var parseDate = d3.timeParse("%Y");
-     data.forEach(function(d){      
-       				d.Year = parseDate(d.Year);        
-           })
+		.attr("height", height + margin.top + margin.bottom) 
+     
+         var parseDate = d3.timeParse("%Y");    
      
      var x = d3.scaleTime()
     	.domain(d3.extent(data,function(d){return d.Year;})).nice()
-			.range([0, width-margin.left-margin.right])
+	.range([margin.left, width-margin.left-margin.right-20])
 			
 	var maximumValue = 0;
 	var filtred_data = data.filter(function(d){return d.Country_of_Resettlement_ISO == country;}); 
@@ -640,27 +668,26 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
      
       
   for(i of listattrubute ){   
-        scatterplot(svg2,filtred_data,color(i),'Year',i,width,height,25,0);        
+        scatterplot(svg2,filtred_data,color(i),'Year',i,width,height,margin.left+30,10);        
       }
 
-  function scatterplot(el,data,var_color,var_x,var_y,       
-	   dim_width,dim_height,pos_x,pos_y){ 
-	   
-			   
-     
-  		var nested_data = d3.nest()      
-          .key(function(d) { return d[var_x];})
+  function scatterplot(el,data,var_color,var_x,var_y, dim_width,dim_height,pos_x,pos_y){
+        //console.log(data); 
+  	var nested_data = d3.nest()      
+          .key(function(d) {return d[var_x];})
           .rollup(function(d) {
             return d3.sum(d,function(v){
               return parseInt(v[var_y])});
           })
           .entries(data);
- 
+        
+       if(maximumValue ==0){
       maximumValue = d3.max([maximumValue,d3.max(d3.extent(nested_data,function(d){return d.value;}))])
-	 console.log(maximumValue);
+	 //console.log(maximumValue);
+     }
      var y = d3.scaleLinear()
             .domain([0, maximumValue])
-            .range([height-margin.top-margin.bottom,0])
+            .range([height-margin.top-margin.bottom,margin.top])
 			
     //console.log(nested_data);
      var displayDate = d3.timeFormat("%Y");  
@@ -670,18 +697,18 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
     	.curve(d3.curveMonotoneX)
       .x(function(d, i) { return x(parseDate(d.key.split(" ")[3]));})
       .y(function(d, i) { return  y(parseInt(d.value));})
-     
-   		var g= el.append("g")
-          		.attr("transform","translate("+pos_x+","+pos_y+")")
+
+	var g= el.append("g")
+  		.attr("transform","translate("+pos_x+","+pos_y+")")
       
        g.selectAll("path")
             .data([nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3]))])
-          	.enter().append("path")
+            .enter().append("path")
             .style("fill","none")
-     				.style("stroke",var_color)
+     	    .style("stroke",var_color)
             .style("stroke-width",2)
-     				.attr("d", line)
-            .on('mouseover',function(d){
+     	    .attr("d", line)
+            .on('mouseover',function(d){console.log("ok");
               d3.selectAll("path").filter(function(e){
                 return d==e
               }).style("stroke", "red")
@@ -691,29 +718,26 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
               d3.selectAll("path").filter(function(e){
                 return d==e
               }).style("stroke", var_color)
-              	.style("stroke-width", 2)
-              	
-            })
+              	.style("stroke-width", 2)              	
+            });
             
-            var h =g.append("text").style("opacity",0);
+            
             
             g.selectAll("circle")
             .data(nested_data.sort((a,b) => parseInt(b.key.split(" ")[3]) - parseInt(a.key.split(" ")[3])))
-          	.enter().append("circle")
+            .enter().append("circle")
             .attr("cx", function(d) { return x(parseDate(d.key.split(" ")[3])); })
             .attr("cy", function(d) { return y(parseInt(d.value)); })
             .attr("r",3)
-          	.attr("fill",var_color)
-            .on('mouseover',function(d){
-              d3.selectAll("circle").filter(function(e){
-                return d==e;
-              }).style('fill', function(e){
-                 h.attr("x",function() { return x(parseDate(d.key.split(" ")[3])); })
-                   .attr("y",function() { return y(parseInt(d.value)); })
-                   .text(d.key.split(" ")[3]+", "+d.value)
-                   .style("opacity",1)
-                	return "grey";
-                       					})
+            .attr("fill",var_color)
+            .on('mouseover',function(d){            
+              div.transition()		
+                  .duration(500)		
+                  .style("opacity", .8)
+              		.style("background","white");              
+              div.html("year : "+d.key.split(" ")[3]+"<br/> value : "+d.value)	
+                  .style("left", (d3.event.pageX) + "px")		
+                  .style("top", ( d3.event.pageY - 28) + "px");                       				
             })
             .on("mouseout",function(d){
               d3.selectAll("circle").filter(function(e){                
@@ -737,7 +761,7 @@ create_rectTitle(data_link,"#"+keyofcountry,original_x_befor_click,original_y_be
           
           g.append("g")
             .attr("class", "y axis")
-          	.attr("transform", "translate("+0+",0 )")
+          	.attr("transform", "translate("+margin.left+",0 )")
             .call(yAxis)
 }
 
