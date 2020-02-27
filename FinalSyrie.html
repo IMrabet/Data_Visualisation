@@ -67,7 +67,7 @@ div.titre1553 {
 </head>
 
 <body>
-</br></br></br><strong><marquee><FONT size="5">Cliquez sur l'histogramme pour avoir des informations sur les victimes (les 150 premiers): </FONT></marquee></strong>
+</br></br></br><strong><marquee><FONT size="5">Click on the histogram for more details on victils (the first 150 victims): </FONT></marquee></strong>
 
 <div style="height:100px">
 			  <header id="header" id="home">
@@ -218,7 +218,7 @@ var symbols = []
                   name.push({"nom" : domaine[step].name, "province": domaine[step].province ,"deadDate" :domaine[step].deathdate.toDateString()})
 
               }
-              myp.innerHTML = "<tr><th>Nom</th><th>Province</th><th>DeadDate</th></tr>"
+              myp.innerHTML = "<tr><th>Name</th><th>Province</th><th>Death Date</th></tr>"
             name.forEach(function(d){
               myp.innerHTML += "<tr><td>" + d.nom+"</td><td>" + d.province + "</td><td>" + d.deadDate + "</td></tr>"
             })
